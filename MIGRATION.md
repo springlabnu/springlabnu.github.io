@@ -24,6 +24,7 @@ Select-String -Path content\*,content\*\*,data\* -Pattern 'PLACEHOLDER'
 | Home `/home`: intro, photos | `content/_index.md`, `data/home.yaml` (teasers), `assets/images/research/home-photo-*.jpg` | see below |
 | Home `/home`: News, 2021 onward | `content/news/*.md` (23 items) | see below |
 | Home `/home`: News before 2021 | `content/older-news.md` (one archive page at `/older-news/`, linked from the bottom of News) | see below |
+| Contact Us `/contact-us` | **Join Us**: `content/join/_index.md`. Contact details are in `hugo.toml` → `[params.contact]` and shown in the footer on every page. | see below |
 
 ### People
 
@@ -116,6 +117,14 @@ Select-String -Path content\*,content\*\*,data\* -Pattern 'PLACEHOLDER'
   - Heiko Enderling's affiliation: the June 2023 news names MD Anderson, so `collaborators.yaml` now says MD Anderson and links his MD Anderson profile.
 - **Dropped from news text:** hashtags and Twitter handles, bit.ly links, the claim that the denoising code "will be released soon at springlabnu.com/software", and long praise passages, which were shortened.
 
+### Contact Us → Join Us and footer
+
+- **Contact details:** the address (ISEC Room 314, 805 Columbus Ave, Boston MA 02120; the old page had the typo "Colombus"), "Department of Physics" and the email now live in `hugo.toml` and appear in the footer.
+- **Undergraduate volunteering:** the four areas (cell culture, electronics, optics, computational biophysics) became the "Learning opportunities" list on Join Us.
+- **Volunteer form:** the existing Google Form (`forms.gle/XB4iHnKQyjsTBsheA`) is now embedded through the `google-form` shortcode. The embed URL was taken from the short link's redirect. A fallback "open in new tab" link sits below it.
+- **Grads and postdocs:** a new "email the PI" section, as specified in the brief.
+- **Dropped:** two banner images on the Contact page and the Northeastern Physics logo.
+
 ---
 
 ## Open TODOs (for the site owner)
@@ -128,6 +137,10 @@ Select-String -Path content\*,content\*\*,data\* -Pattern 'PLACEHOLDER'
 - [ ] Alumni `years` are often only "joined YYYY". Add end years and `now` (next position) where known.
 - [ ] The PI's email is shown as `b.spring@northeastern.edu`, decoded from the old site's "b dot spring at northeastern dot edu". Please confirm.
 - [ ] The large photo at the bottom of the old People page was not migrated. Tell me if it's a group photo you want on the site.
+
+### Join Us
+- [ ] **The volunteer form requires Google sign-in.** In the preview the embedded form showed "Sign in to your Google Account". Google often blocks sign-in inside embeds, so visitors may only be able to use the "open in new tab" link. To fix it, in Google Forms → Settings → Responses, turn off "Restrict to users in …" (and "Collect email addresses: Verified" if you can use "Responder input" instead). Or keep the restriction and accept the link-only behaviour.
+- [ ] **Undergraduate welcome text:** I wrote it from facts elsewhere on the site. Please review the tone, and add any requirements such as hours per week or minimum semesters.
 
 ### Home and News
 - [ ] **Home video:** add a YouTube or Vimeo URL as `hero_video:` in `content/_index.md`. A placeholder box shows until then.
@@ -150,7 +163,7 @@ Select-String -Path content\*,content\*\*,data\* -Pattern 'PLACEHOLDER'
 - [ ] **Possible new entry:** the femtosecond fiber laser build has a published step-by-step protocol (JoVE 2019). Add it as a platform if you'd like.
 
 ### Collaborators
-- [ ] **Affiliations and URLs may be stale.** They come from an old page. Please check each one, especially Heiko Enderling's (the `labpages2.moffitt.org` URL looks old) and the Hasan Lab URL.
+- [ ] **Affiliations and URLs may be stale.** They come from an old page. Please check each one. Heiko Enderling was moved to MD Anderson based on the 2023 news item; also check his lab's name and the Hasan Lab URL.
 - [ ] **Brain Tumor Stem Cell Lab (Wakimoto):** no URL was given. Add one.
 - [ ] **Robert S. Knox:** he's an individual (emeritus), not a lab. Keep him here, or drop him.
 - [ ] **Partner descriptions:** ideally each partner reviews or supplies its own text.

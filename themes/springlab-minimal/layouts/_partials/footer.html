@@ -5,7 +5,8 @@
       <h2 id="footer-contact">Contact</h2>
       <address>
         {{ with $c.pi }}<strong>{{ . }}</strong><br>{{ end }}
-        {{ site.Title }}, {{ site.Params.institution }}<br>
+        {{ site.Title }}{{ with $c.department }}, {{ . }}{{ end }}<br>
+        {{ site.Params.institution }}<br>
         {{ range $c.address }}{{ . }}<br>{{ end }}
         {{ with $c.email }}<a href="mailto:{{ . }}">{{ . }}</a>{{ end }}
       </address>

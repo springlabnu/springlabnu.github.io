@@ -66,6 +66,7 @@ enableRobotsTXT = true
 
   [params.contact]
     pi = "Bryan Q. Spring, Ph.D."
+    department = "Department of Physics"
     email = "b.spring@northeastern.edu"
     address = [
       "Interdisciplinary Science and Engineering Complex (ISEC), Room 314",
@@ -82,5 +83,5 @@ enableRobotsTXT = true
     # Google Form for undergraduate volunteers.
     # formEmbedURL: the form's ".../viewform?embedded=true" URL (used by the google-form shortcode).
     # formURL: the normal share link (shown as a fallback "open in new tab" link).
-    formURL = ""
-    formEmbedURL = ""
+    formURL = "https://forms.gle/XB4iHnKQyjsTBsheA"
+    formEmbedURL = "https://docs.google.com/forms/d/e/1FAIpQLSdUsLDzLY2niOy6s5I1WIcPblVF_Hm2KiKTLrxCb4urDVjPNw/viewform?embedded=true"
