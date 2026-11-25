@@ -18,6 +18,7 @@ Select-String -Path content\*,content\*\*,data\* -Pattern 'PLACEHOLDER'
 |---|---|---|
 | People `/people` | `data/people.yaml`, `content/people/_index.md`, photos in `assets/images/people/` | see below |
 | Publications `/publications` | `data/publications.yaml` (49), `data/patents.yaml` (5), `content/publications/_index.md` | see below |
+| Research `/research` | `data/research.yaml` (3 pillars, 7 projects, funding), `content/research/_index.md`, images in `assets/images/research/` | see below |
 
 ### People
 
@@ -46,6 +47,31 @@ Select-String -Path content\*,content\*\*,data\* -Pattern 'PLACEHOLDER'
   - Patent title "Photoimmunotherapy-diven" → "Photoimmunotherapy-driven".
 - **Journal names** were expanded from abbreviations, e.g. "Photochem Photobiol" → "Photochemistry and Photobiology".
 
+### Research
+
+- **The 7 old project sections became `projects`:**
+  - "Optical image-guided photomedicine" → "Light-activated, tumor-targeted therapy"
+  - "Multiphoton microendoscopy"
+  - "Femtosecond fiber lasers"
+  - "GPU-accelerated hyperspectral image analysis" → "Real-time hyperspectral image analysis"
+  - "Low-cost custom LED-arrays"
+  - "Fluorescent probes and biosensors"
+  - "Cancer biology and physics" → "Models of chemoresistant cancer"
+
+  Each project is tagged with one or more of the three new pillars and linked to related papers in `publications.yaml`. I chose those links; please review them.
+- **Funding:** the old section was logos only. They became a text list naming NCI (including the K22), the Chan Zuckerberg Initiative, Scialog 2021, the Smith Family Awards Program, and Northeastern's Office of Research Development. The logo images were not migrated.
+- **Images kept** (the lab's own, or adapted from the lab's own papers):
+  - the taPIT schematic and in vivo microendoscopy figure (adapted from Spring et al., PNAS 2014);
+  - the ANDi fiber-laser photos;
+  - the activatable-probe figure (adapted from Obaid, Spring, Hasan et al., JBO 2017);
+  - two lab photos (cell culture, optics) credited on the old site to photographer Spencer A. Cohen;
+  - the two LED-array photos, which went to `assets/images/platforms/`.
+- **Dropped:**
+  - figures from other groups: the Chris Xu (Cornell) excitation diagram, the imaging-depth plot from Kobat et al. 2009, the Ducourthial/Louradour Sci Rep 2015 probe schematic, and the Cellaria Bio cell-line micrograph;
+  - external "read more" links (MicroscopyU, the Hallmarks of Cancer PDF, the Cellaria white paper, a 1999 ovarian-cancer news clipping);
+  - the long physics explanation of multiphoton excitation, now reduced to a plain-language summary.
+- **Updated wording:** the old page called the micrometastasis technology "patent-pending". It is now US 11,547,300 (per the Publications page), so the text says "issued patent".
+
 ---
 
 ## Open TODOs (for the site owner)
@@ -58,6 +84,12 @@ Select-String -Path content\*,content\*\*,data\* -Pattern 'PLACEHOLDER'
 - [ ] Alumni `years` are often only "joined YYYY". Add end years and `now` (next position) where known.
 - [ ] The PI's email is shown as `b.spring@northeastern.edu`, decoded from the old site's "b dot spring at northeastern dot edu". Please confirm.
 - [ ] The large photo at the bottom of the old People page was not migrated. Tell me if it's a group photo you want on the site.
+
+### Research
+- [ ] **The old Research text may be years out of date.** Check that the 7 projects still describe current work. Two things to check in particular: whether the Cellaria Bio collaboration is still active, and the target cancers listed for microendoscopy (brain, pancreas, ovary).
+- [ ] **Computation pillar:** it has no image. Add one (e.g. a screenshot of the hyperspectral software) at `assets/images/research/…`.
+- [ ] **Funding list:** confirm it's complete and current. For example, the Aug 2026 news mentions a new NCI R01 (CA296584).
+- [ ] **Photo license:** confirm the lab may keep using Spencer A. Cohen's photos. If credit is required, we can add a credit line.
 
 ### Publications
 - [ ] **DOIs are missing** for 14 entries that link only to a publisher page:

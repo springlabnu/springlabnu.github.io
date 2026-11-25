@@ -1,32 +1,123 @@
 # Research page data. Schema: see CLAUDE.md → "research.yaml".
-# pillars:  the three research pillars (id is referenced by projects)
-# projects: pillars = list of pillar ids; publications = keys from data/publications.yaml
-# funding:  list of funders shown at the bottom of the Research page
+#   pillars   the three research pillars; `id` is referenced by projects
+#   projects  pillars = list of pillar ids; publications = keys from data/publications.yaml
+#             summary allows Markdown; image is a path under assets/images/ (+ image_alt)
+#   funding   funders listed at the bottom of the page
+# Migrated from the old Google Site Research page. See MIGRATION.md.
 
 pillars:
   - id: cell-culture
-    title: "Cell Culture"
-    summary: "[PLACEHOLDER] One or two sentences on the lab's cell-culture work."
-    image: ""
+    title: "Cell Culture & Cancer Biology"
+    summary: >-
+      Patient-derived tumor cultures, 3D and organoid co-culture models with immune cells, and mouse models
+      let us test which treatments kill drug-resistant cancer cells while sparing healthy and immune cells.
+    image: research/lab-cell-culture.jpg
+    image_alt: "A researcher working with cell-culture flasks in a biosafety cabinet"
   - id: optics
     title: "Optics & Photonics"
-    summary: "[PLACEHOLDER] One or two sentences on the lab's optics work."
-    image: ""
+    summary: >-
+      We build our own femtosecond fiber lasers, miniature multiphoton microendoscopes, and LED illumination
+      systems to see cancer at cellular resolution inside the body and to activate light-triggered drugs.
+    image: research/lab-optics.jpg
+    image_alt: "A researcher aligning optics on a laser table"
   - id: computational
-    title: "Computation"
-    summary: "[PLACEHOLDER] One or two sentences on the lab's computational work."
+    title: "Computation & Modeling"
+    summary: >-
+      GPU-accelerated image analysis turns hyperspectral video into usable maps in real time, and mathematical
+      models help choose light doses and treatment combinations.
     image: ""
 
 projects:
-  - title: "[PLACEHOLDER] Example project"
-    pillars: [optics, computational]
-    summary: "[PLACEHOLDER] Short project description (Markdown allowed)."
-    image: ""
-    image_alt: ""
-    links: []
-    publications: [placeholder2026example]
+  - title: "Light-activated, tumor-targeted therapy"
+    pillars: [cell-culture, optics]
+    summary: >-
+      Red and near-infrared light can trigger cancer-cell death through mechanisms that do not depend on the
+      pathways that make tumors resistant to drugs. We develop *tumor-targeted, activatable
+      photoimmunotherapy* (taPIT) and photodynamic priming: antibodies carry light-sensitive dyes to cancer cells,
+      the dyes switch on only after they are taken up, and light then destroys the labeled cells while leaving
+      their neighbors intact. The same dyes glow, so the treated cells can be imaged. This line of work grew out
+      of Prof. Spring's postdoctoral research with Tayyaba Hasan at the Wellman Center for Photomedicine, which
+      produced an issued patent and light-activated nanomedicines that release drugs only inside the tumor.
+    image: research/tapit-schematic.jpg
+    image_alt: "Diagram of antibody–dye conjugates binding cancer cells, lighting them up for imaging and destroying them when illuminated with near-infrared light"
+    links:
+      - label: "Introduction to photodynamic therapy (review, PDF)"
+        url: "https://drive.google.com/file/d/17vvNS9WfwGdqyYAnAnp9N0RPToBPVX-I/view?usp=sharing"
+    publications: [spring2014micrometastases, spring2016nanoliposome, kercher2019spares, harman2026cancerselective, timilsina2025identification]
+
+  - title: "Multiphoton microendoscopy"
+    pillars: [optics]
+    summary: >-
+      Multiphoton microscopy splits the energy needed to excite a fluorescent molecule across two or more
+      near-infrared photons. Longer wavelengths scatter less in tissue, so the technique can image cells
+      deeper than visible light can, and excitation happens only in a tiny focal spot, giving built-in 3D
+      sectioning. We are miniaturizing this into a flexible, video-rate, hyperspectral fiber-scanning
+      microendoscope that can track many fluorescent probes at once in mouse models of brain, pancreatic and
+      ovarian cancer, with a path toward clinical use. We are also measuring multiphoton excitation spectra of
+      common dyes beyond 1,000 nm, where published data are scarce.
+    image: research/micrometastases-microendoscopy.jpg
+    image_alt: "In vivo fluorescence microendoscopy images of micrometastases, comparing untreated mice with mice after light-activated therapy"
+    publications: [zhang2024videorate, spring-longitudinal-microendoscopy, lang2021brightness]
+
+  - title: "Femtosecond fiber lasers"
+    pillars: [optics]
+    summary: >-
+      Multiphoton imaging traditionally relies on solid-state ultrafast lasers costing around $100k. Building on
+      fiber-laser designs from Frank Wise's group at Cornell, we fabricate compact femtosecond fiber lasers for
+      roughly a tenth of that cost, including all-normal-dispersion (ANDi) lasers with carefully verified
+      mode-locking, and gain-managed amplifiers that deliver pulses shorter than 50 fs.
+    image: research/andi-fiber-laser.jpg
+    image_alt: "Four photos of a fiber laser built on an optical table, including a glowing fiber loop"
+    publications: [davoudzadeh2019fiberlaser, zhang2019lowcost, price2026sub50]
+
+  - title: "Real-time hyperspectral image analysis"
+    pillars: [computational]
+    summary: >-
+      To use imaging as a live "optical biopsy," analysis has to keep up with acquisition. Processing one
+      minute of hyperspectral video (about 5.7 GB) took 6–8 hours with conventional pixel-by-pixel code; our
+      GPU-parallel algorithms handle the same data at more than 150 frames per second, making feature tracking,
+      cell counting, micro-mosaicking and abundance maps available immediately.
+    publications: [lang2019correlation, harman2022denoising, kercher-unmixing, lang-mosaicking-tumor]
+
+  - title: "Low-cost LED arrays for light-activated therapy"
+    pillars: [optics, cell-culture]
+    summary: >-
+      Photodynamic therapy needs a light source to switch on the drug. We designed an automated, inexpensive,
+      easy-to-use illumination platform built around a high-power LED array that evenly lights selected wells of
+      24- or 96-well plates, so replicate samples get the same dose. The design is open source; see
+      [Platforms](/platforms/).
+    publications: [kercher2020ledarray, zhang2022ledarray]
+
+  - title: "Fluorescent probes and biosensors"
+    pillars: [optics, cell-culture]
+    summary: >-
+      Fluorescent probes that target cancer molecules are entering the operating room to help surgeons see
+      tumor margins. With the Hasan lab, we develop multicolor activatable antibody–dye–quencher probes that stay
+      dark until they reach their target, brightening 10- to 20-fold without losing their ability to bind, to
+      reveal mixed populations of cancer cells during surgery and microendoscopy.
+    image: research/activatable-probes.jpg
+    image_alt: "Diagram and data showing antibody–fluorophore–quencher conjugates that brighten after binding cancer cells"
+    publications: [obaid2017activatable]
+
+  - title: "Models of chemoresistant cancer"
+    pillars: [cell-culture, computational]
+    summary: >-
+      Drug resistance drives the high recurrence and mortality of ovarian cancer. We build cell-culture and mouse
+      models of chemoresistant disease from patient-derived cells, using lines and culture methods from Cellaria
+      Bio that preserve the diversity of the original tumor, and we cycle chemotherapy doses while tracking
+      cell-surface markers to find signatures of resistant, stem-like and mesenchymal cells. Mathematical models
+      built with collaborators help plan dosing and combination therapies.
+    links:
+      - label: "Cellaria Bio"
+        url: "https://www.cellariabio.com/"
+    publications: [timilsina2024methods, zahid2024fractionated, spring2019illuminating, spring2024redlight]
 
 funding:
-  - name: "[PLACEHOLDER] Funder name"
-    note: ""
-    url: ""
+  - name: "National Cancer Institute (NIH)"
+    note: "including a K22 Transition Career Development Award"
+  - name: "Chan Zuckerberg Initiative"
+  - name: "Scialog: Advancing Bioimaging (2021)"
+    note: "Research Corporation for Science Advancement, Chan Zuckerberg Initiative, and the Frederick Gardner Cottrell Foundation"
+  - name: "Smith Family Awards Program for Excellence in Biomedical Research"
+    note: "Richard and Susan Smith Family Foundation"
+  - name: "Northeastern University Office of Research Development"
