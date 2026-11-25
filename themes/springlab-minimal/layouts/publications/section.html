@@ -31,10 +31,12 @@
     <h2 id="patents-h">Patents and patent applications</h2>
     <ul class="pub-list">
       {{ range sort . "date" "desc" }}
+      {{ $pt := . }}
       <li>
         <span class="pub-authors">{{ delimit (.inventors | default slice) ", " }}.</span>
         <span class="pub-title">{{ .title }}.</span>
-        {{ with .number }}{{ . }}{{ end }}{{ with .date }} ({{ time.Format "Jan 2, 2006" . }}){{ end }}.
+        {{ with .assignees }}Assignee{{ if gt (len .) 1 }}s{{ end }}: {{ delimit . ", " }}.{{ end }}
+        {{ with .number }}{{ . }}{{ end }}{{ with .date }}, {{ if eq $pt.status "issued" }}issued{{ else }}filed{{ end }} {{ time.Format "January 2, 2006" . }}{{ end }}.
         {{ with .status }}<span class="badge badge-{{ . }}">{{ . | humanize }}</span>{{ end }}
         {{ with .url }}<span class="pub-links"><a href="{{ . }}">Link</a></span>{{ end }}
       </li>

@@ -1,10 +1,41 @@
 # Patents and patent applications. Schema: see CLAUDE.md → "patents.yaml".
-# status: issued | provisional | pending
-# date:   YYYY-MM-DD (issue date, or filing date for applications)
+#   status    issued | provisional | pending
+#   date      YYYY-MM-DD (issue date for patents, filing date for applications)
+#   assignees list (optional)
+# Migrated from the old Google Site Publications page. See MIGRATION.md.
 
-- title: "[PLACEHOLDER] Example patent title"
-  inventors: ["B. Q. Spring"]
-  number: "[PLACEHOLDER]"
+- title: "Laser ablation system"
+  inventors: ["Spring BQ", "Price L", "Zhang K", "Wise F", "Ilday O"]
+  assignees: ["Northeastern University", "Cornell University", "Ruhr University Bochum"]
+  number: "US Provisional Patent Application 63/934,847"
   status: provisional
-  date: 2026-01-01
-  url: ""
+  date: 2025-12-09
+
+- title: "Gain-managed amplifier laser system for broadband fluorescence multiplexing"
+  inventors: ["Spring BQ", "Price L", "Zhang K", "Karimitar H", "Wise F"]
+  assignees: ["Northeastern University", "Cornell University"]
+  number: "US Provisional Patent Application 63/929,165"
+  status: provisional
+  date: 2025-12-09
+
+- title: "Photoimmunotherapy-driven remodeling of the immunosuppressive tumor microenvironment"
+  inventors: ["Spring BQ", "Pilon-Thomas S", "Harman R", "Lozano-Pope I"]
+  assignees: ["Northeastern University"]
+  number: "US Provisional Patent Application 63/814,931"
+  status: provisional
+  date: 2025-05-30
+
+- title: "Disease-homing light delivery by engineering bioluminescent immune cells for whole body precision photomedicine"
+  inventors: ["Spring BQ", "Nishimura N", "Schaffer C", "Harman R", "Kercher EM", "Timilsina S"]
+  assignees: ["Northeastern University", "Cornell University"]
+  number: "US Provisional Patent Application 63/759,802"
+  status: provisional
+  date: 2025-02-18
+
+- title: "Methods of treating and imaging tumor micrometastases using photoactive immunoconjugates"
+  inventors: ["Hasan T", "Spring BQ", "Palanisami A"]
+  assignees: ["The General Hospital Corporation (Massachusetts General Hospital)"]
+  number: "US Patent 11,547,300"
+  status: issued
+  date: 2023-01-10
+  url: "https://patents.google.com/patent/US11547300B2/en"

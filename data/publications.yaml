@@ -1,22 +1,590 @@
-# Publications. Field names follow BibTeX so that a future importer
-# (scripts/bib2yaml) can generate this file from a .bib export.
+# Publications, newest first. Field names follow BibTeX so a future importer
+# (scripts/) can generate this file from a .bib export.
 # Schema: see CLAUDE.md → "publications.yaml".
-# type:   article | inproceedings | incollection | book | thesis | preprint | misc
-# status: published | accepted | submitted | embargoed   (anything but "published" shows a label)
-# year:   omit for items without a year yet; they are listed under "Forthcoming"
-# pdf:    optional link to a PDF (e.g. Google Drive)
+#   key      unique id (firstauthorYEARfirstword); referenced from research.yaml / platforms.yaml
+#   type     article | inproceedings | incollection | book | thesis | preprint | misc
+#   authors  list, "Lastname Initials" as in the old site
+#   status   published | accepted | submitted | embargoed  (non-published shows a label)
+#   year     omit when not yet assigned → listed under "Forthcoming"
+#   doi      bare DOI (no https://doi.org/); only when known for certain
+#   url      publisher page when there is no DOI
+#   pdf      optional link to a PDF copy (Google Drive)
+#   note     short free text (e.g. "Early view")
+# Migrated from the old Google Site Publications page (49 entries). See MIGRATION.md.
 
-- key: placeholder2026example
+# ---------------------------------------------------------------- Forthcoming
+- key: spring-longitudinal-microendoscopy
   type: article
-  title: "[PLACEHOLDER] Example publication title"
-  authors: ["A. Author", "B. Q. Spring"]
-  venue: "Journal Name"
-  year: 2026
-  volume: ""
-  number: ""
-  pages: ""
-  doi: ""
-  url: ""
-  pdf: ""
+  title: "Longitudinal multiplexed microendoscopy reveals treatment-responsive tumor–immune dynamics in vivo"
+  authors: ["Spring BQ", "Saad MA", "Harman RC", "Kercher EM", "Lang RT", "Zhang K", "Tatz J", "Fang Q", "Sutin J", "Mai Z", "Palanisami A", "Hasan T"]
+  venue: ""
+  doi: "10.21203/rs.3.rs-9856874/v1"
+  status: submitted
+  note: "Latest preprint on Research Square."
+
+- key: saad-myeloid-treg
+  type: article
+  title: "Myeloid–Treg crosstalk disruption by photochemical activation and immune checkpoint therapy more than doubles median survival in a pancreatic cancer model"
+  authors: ["Saad M", "Allen D", "Bergen T", "Nicolas Morala J", "Roberts H", "Mai Z", "Chandrasekhara V", "Wang K", "Maytin E", "Spring BQ", "Dong H", "Hasan T"]
+  venue: "Nature Communications"
   status: accepted
-  note: ""
+
+- key: kercher-activatable-pit
+  type: article
+  title: "Activatable photoimmunotherapy enables spatiotemporal depletion of pathogenic cells in immune-mediated disease and cancer"
+  authors: ["Kercher EM", "Sadiki A", "Liu S", "Essien KI", "Finlay WJJ", "Epperly AH", "Zhou ZS", "Spring BQ", "Harris JE"]
+  venue: "Journal of Investigative Dermatology"
+  url: "https://www.jidonline.org/article/S0022-202X%2826%2902730-2/abstract"
+  status: accepted
+
+- key: kercher-unmixing
+  type: article
+  title: "Video-rate hyperspectral unmixing for multiplexed microscopy and microendoscopy"
+  authors: ["Kercher EM", "Tatz J", "Palanisami A", "Fang Q", "Spring BQ"]
+  venue: "Scientific Reports"
+  status: embargoed
+  note: "Accepted."
+
+- key: lang-mosaicking-tumor
+  type: article
+  title: "Micro-image mosaicking of video-rate multiplexed microendoscopy enables analysis of tumor heterogeneity"
+  authors: ["Lang RT", "Saad MA", "Palanisami A", "Kercher EM", "Price L", "Spring BQ"]
+  venue: "Journal of Biomedical Optics"
+  status: embargoed
+  note: "Accepted."
+
+# ---------------------------------------------------------------- 2026
+- key: park2026farfield
+  type: article
+  title: "Far-field bioluminescent immune cell-mediated photodynamic therapy is limited by photon flux"
+  authors: ["Park JT", "Timilsina S", "Harman RC", "Eom CY", "Oh J", "Fang Q", "Nishimura N", "Schaffer CB", "Spring BQ"]
+  venue: "Photochemistry and Photobiology"
+  year: 2026
+  pages: "1–17"
+  doi: "10.1111/php.70149"
+  pdf: "https://drive.google.com/file/d/1ctH4XRqpzRfa5pceS8EsC8DF5TEfrNTz/view?usp=sharing"
+  status: published
+
+- key: harman2026cancerselective
+  type: article
+  title: "Cancer-selective photoimmunotherapy spares T cells and NK cells and promotes antitumor immunity in an allogeneic human 3D culture model"
+  authors: ["Harman RC", "Lozano I", "Ramos K", "Quilez-Alburquerque J", "Gagnon J", "Cheung S", "Otero N", "Johnson-Shoucair A", "Kercher EM", "Harris JE", "Rizvi I", "Pilon-Thomas S", "Enderling H", "Hasan T", "Spring BQ"]
+  venue: "Photochemistry and Photobiology"
+  year: 2026
+  doi: "10.1111/php.70095"
+  pdf: "https://drive.google.com/file/d/19jWBxnYaMfoyAKYpIesrk5jGB5e_k1bd/view?usp=sharing"
+  status: published
+  note: "Early view."
+
+- key: price2026sub50
+  type: article
+  title: "Sub-50-femtosecond gain-managed amplified pulses enhance nonlinear ablation efficiency"
+  authors: ["Price LJ", "Zhang K", "Haig H", "Otero NJ", "Repgen P", "Valdés PA", "Wise F", "Ilday FO", "Spring BQ"]
+  venue: "Biomedical Optics Express"
+  year: 2026
+  volume: "17"
+  pages: "202–216"
+  url: "https://opg.optica.org/boe/fulltext.cfm?uri=boe-17-1-202"
+  pdf: "https://drive.google.com/file/d/1oyga2IizAzi58JAYJtsHPqPGHuQdtNyS/view?usp=drive_link"
+  status: published
+
+# ---------------------------------------------------------------- 2025
+- key: timilsina2025identification
+  type: article
+  title: "Identification of potential cell surface targets in patient-derived cultures towards photoimmunotherapy of high-grade serous ovarian cancer"
+  authors: ["Timilsina S", "Amara AR", "Abu R", "Spring BQ"]
+  venue: "Photochemistry and Photobiology"
+  year: 2025
+  volume: "101"
+  number: "5"
+  pages: "1211–1231"
+  doi: "10.1111/php.14091"
+  pdf: "https://drive.google.com/file/d/1MdDRA1rBa6NOzwnUdXgaw3ARgWjgv9-1/view?usp=drive_link"
+  status: published
+
+- key: desilva2025priming
+  type: article
+  title: "Photodynamic priming with red light triggers adaptive immune responses in a pancreatic cancer mouse model"
+  authors: ["De Silva P", "Saad M", "Swain J", "Mai Z", "Kidd M", "Choe J", "Camargo A", "Sanjay A", "Chandrasekhara V", "Pogue B", "Wang K", "Spring BQ", "Maytin E", "Hasan T"]
+  venue: "Journal of Photochemistry and Photobiology B: Biology"
+  year: 2025
+  volume: "265"
+  pages: "113126"
+  doi: "10.1016/j.jphotobiol.2025.113126"
+  pdf: "https://drive.google.com/file/d/1r1X55nDEcup953EK8SiuFD6Xchn1jPYc/view?usp=drive_link"
+  status: published
+
+- key: desphande2025azapladipys
+  type: article
+  title: "Synthesis and evaluation of Aza-PLADIPYs: A novel class of cytotoxic agents"
+  authors: ["Desphande TA", "Zeng A", "Young M", "Nicholson T", "Luo K", "Timilsina S", "Spring BQ", "Müller P", "Kulkarni N", "Betharia S", "Priefer R"]
+  venue: "Results in Chemistry"
+  year: 2025
+  volume: "14"
+  pages: "102114"
+  doi: "10.1016/j.rechem.2025.102114"
+  pdf: "https://drive.google.com/file/d/1HRipGzYIwjd-jti_ZQYIbD0Cr8vh8r2-/view?usp=drive_link"
+  status: published
+
+# ---------------------------------------------------------------- 2024
+- key: zhang2024videorate
+  type: article
+  title: "Video-rate two-photon microendoscopy using second harmonic resonance fiber scanning"
+  authors: ["Zhang K", "Ducourthial G", "Sharan T", "Mohan A", "Hou J", "Timilsina S", "Liang R", "Louradour F", "Spring BQ"]
+  venue: "Biomedical Optics Express"
+  year: 2024
+  volume: "15"
+  number: "11"
+  pages: "6324–6339"
+  url: "https://opg.optica.org/boe/fulltext.cfm?uri=boe-15-11-6324&id=561374"
+  pdf: "https://drive.google.com/file/d/1RXupXvrItii60W-JJ9ipk9eIvtlGnlRx/view?usp=drive_link"
+  status: published
+
+- key: zahid2024fractionated
+  type: article
+  title: "Fractionated photoimmunotherapy stimulates an anti-tumor immune response: an integrated mathematical and in vitro study"
+  authors: ["Zahid MU", "Waguespack M", "Harman RC", "Kercher EM", "Nath S", "Hasan T", "Rizvi I", "Spring BQ", "Enderling H"]
+  venue: "British Journal of Cancer"
+  year: 2024
+  volume: "131"
+  pages: "1378–1386"
+  doi: "10.1038/s41416-024-02844-y"
+  pdf: "https://drive.google.com/file/d/1LB2FkRl1C6dF0JvylNv3Hbdcu6V0L6J-/view?usp=drive_link"
+  status: published
+
+- key: spring2024redlight
+  type: article
+  title: "Red light-activated depletion of drug-refractory glioblastoma stem cells and chemosensitization of an acquired-resistant mesenchymal phenotype"
+  authors: ["Spring BQ", "Watanabe K", "Ichikawa M", "Mallidi S", "Matsudaira T", "Timerman D", "Swain JWR", "Mai Z", "Wakimoto H", "Hasan T"]
+  venue: "Photochemistry and Photobiology"
+  year: 2024
+  doi: "10.1111/php.13985"
+  pdf: "https://drive.google.com/file/d/1oKlWL9nYdoQcfrCVPkw8-tFxMuzdOCDk/view?usp=drive_link"
+  status: published
+
+- key: wu2024oct
+  type: article
+  title: "High-speed forward-viewing OCT probe based on Lissajous sampling and sparse reconstruction"
+  authors: ["Wu X", "Ishrak R", "Reihanisaransari R", "Verma Y", "Spring BQ", "Singh K", "Reddy R"]
+  venue: "Optics Letters"
+  year: 2024
+  volume: "49"
+  pages: "3652–3655"
+  doi: "10.1364/OL.521595"
+  pdf: "https://drive.google.com/file/d/16_DrsvI3ojZH_JHRCcc2kkCqRGN-4lkM/view?usp=drive_link"
+  status: published
+
+- key: timilsina2024methods
+  type: article
+  title: "Methods for assessing and removing non-specific photoimmunotherapy damage in patient-derived tumor cell culture models"
+  authors: ["Timilsina S", "Saad MA", "Lang RT", "Hasan T", "Spring BQ"]
+  venue: "Photochemistry and Photobiology"
+  year: 2024
+  doi: "10.1111/php.13957"
+  pdf: "https://drive.google.com/file/d/1W0ds5VQO5xJojAsysl1nFS7cx_XN3DUI/view?usp=drive_link"
+  status: published
+
+- key: sadiki2024sitespecific
+  type: article
+  title: "Site-specific conjugation of native antibody: transglutaminase-mediated modification of conserved glutamine while maintaining the primary sequence and core Fc glycan via trimming with an endoglycosidase"
+  authors: ["Sadiki A", "Liu S", "Vaidya SR", "Kercher EM", "Lang RT", "McIsaac J", "Spring BQ", "Auclair JR", "Zhou ZS"]
+  venue: "Bioconjugate Chemistry"
+  year: 2024
+  volume: "35"
+  number: "4"
+  pages: "465–471"
+  doi: "10.1021/acs.bioconjchem.4c00013"
+  pdf: "https://drive.google.com/file/d/1p2dFkFqNpLt1JxA9Bp8zL6sburP_uC-X/view?usp=sharing"
+  status: published
+
+# ---------------------------------------------------------------- 2023
+- key: price2023prism
+  type: article
+  title: "Multi-objective optimization of custom compound prism arrays for multiplexed optical imaging"
+  authors: ["Price L", "Tatz J", "Sutin J", "Spring BQ"]
+  venue: "Optics Express"
+  year: 2023
+  volume: "31"
+  number: "6"
+  pages: "9739–9749"
+  doi: "10.1364/OE.475175"
+  pdf: "https://drive.google.com/file/d/1-CxILQB--tovxkXZDQLCqjrNIKpCLVdP/view?usp=share_link"
+  status: published
+
+# ---------------------------------------------------------------- 2022
+- key: zhang2022ledarray
+  type: article
+  title: "An open-source LED array illumination system for automated multiwell plate cell culture photodynamic therapy experiments"
+  authors: ["Zhang K", "Timilsina S", "Waguespack M", "Kercher EM", "Spring BQ"]
+  venue: "Scientific Reports"
+  year: 2022
+  volume: "12"
+  pages: "19341"
+  doi: "10.1038/s41598-022-22020-7"
+  pdf: "https://drive.google.com/file/d/1Q8qsEiOv9TG-0R0lpd_A8i3v3bCklwAo/view?usp=share_link"
+  status: published
+
+- key: harman2022denoising
+  type: article
+  title: "Denoising multiplexed microscopy images in n-dimensional spectral space"
+  authors: ["Harman RC", "Lang RT", "Kercher EM", "Leven P", "Spring BQ"]
+  venue: "Biomedical Optics Express"
+  year: 2022
+  volume: "13"
+  number: "8"
+  pages: "4298–4309"
+  doi: "10.1364/BOE.463979"
+  pdf: "https://drive.google.com/file/d/1x1mLMBP0sHXGi6euI0rdDqa5wz9V1idn/view?usp=sharing"
+  status: published
+
+- key: bekker2022numbers
+  type: article
+  title: "Rethinking the immunotherapy numbers game"
+  authors: ["Bekker RA", "Zahid MU", "Binning JM", "Spring BQ", "Hwu P", "Pilon-Thomas S", "Enderling H"]
+  venue: "Journal for ImmunoTherapy of Cancer"
+  year: 2022
+  volume: "10"
+  pages: "e005107"
+  doi: "10.1136/jitc-2022-005107"
+  pdf: "https://drive.google.com/file/d/1c7xPjgoKKA8hLiqkmTeT4hU5dUBV6c25/view?usp=sharing"
+  status: published
+
+- key: kercher2022fiberoptic
+  type: incollection
+  title: "Photodynamic treatments for disseminated cancer metastases using fiber-optic technologies"
+  authors: ["Kercher EM", "Spring BQ"]
+  venue: "In: Photodynamic Therapy: Methods and Protocols (Methods in Molecular Biology), M. Broekaarden, ed. Springer, New York"
+  year: 2022
+  doi: "10.1007/978-1-0716-2099-1_14"
+  pdf: "https://drive.google.com/file/d/1Xe9eepPuggc8HLcPIxysohFjrMUQYQJt/view?usp=sharing"
+  status: published
+
+# ---------------------------------------------------------------- 2021
+- key: lang2021brightness
+  type: article
+  title: "Two-photon peak molecular brightness spectra reveal long-wavelength enhancements of multiplexed imaging depth and photostability"
+  authors: ["Lang RT", "Spring BQ"]
+  venue: "Biomedical Optics Express"
+  year: 2021
+  volume: "12"
+  number: "9"
+  pages: "5909–5919"
+  doi: "10.1364/BOE.433989"
+  pdf: "https://drive.google.com/file/d/100QtsLI-PVlKtmYff7Th_3WmQ2areHXn/view?usp=sharing"
+  status: published
+
+# ---------------------------------------------------------------- 2020
+- key: kercher2020ledarray
+  type: article
+  title: "High-power light-emitting diode array design and assembly for practical photodynamic therapy research"
+  authors: ["Kercher EM", "Zhang K", "Lang RT", "Olmos A", "Waguespack M", "Spring BQ"]
+  venue: "Journal of Biomedical Optics"
+  year: 2020
+  volume: "25"
+  number: "6"
+  doi: "10.1117/1.JBO.25.6.063811"
+  pdf: "https://drive.google.com/file/d/1wLR7-jGVuT6VPUli0473HTX3IzhXyvoV/view?usp=sharing"
+  status: published
+
+- key: sadiki2020click
+  type: article
+  title: "Site-specific bioconjugation and convergent click chemistry enhances antibody–chromophore conjugate binding efficiency"
+  authors: ["Sadiki A", "Kercher EM", "Lu H", "Lang RT", "Spring BQ", "Zhou ZS"]
+  venue: "Photochemistry and Photobiology"
+  year: 2020
+  volume: "96"
+  pages: "596–603"
+  doi: "10.1111/php.13231"
+  pdf: "https://drive.google.com/file/d/1Qb_evaANNG5rymomWBnl3XWh2SWh0A0O/view?usp=sharing"
+  status: published
+
+# ---------------------------------------------------------------- 2019
+- key: kercher2019spares
+  type: article
+  title: "Cancer cell-targeted and activatable photoimmunotherapy spares T cells in a 3D co-culture model"
+  authors: ["Kercher EM", "Nath S", "Rizvi I", "Spring BQ"]
+  venue: "Photochemistry and Photobiology"
+  year: 2019
+  volume: "96"
+  number: "2"
+  pages: "295–300"
+  doi: "10.1111/php.13153"
+  pdf: "https://drive.google.com/open?id=1t69tqnHLMhagW1WoSEyRYjVSJtxJ11s5"
+  status: published
+
+- key: lang2019correlation
+  type: article
+  title: "Multi-channel correlation improves the noise tolerance of real-time hyperspectral micro-image mosaicking"
+  authors: ["Lang RT", "Tatz J", "Kercher EM", "Palanisami A", "Brooks DH", "Spring BQ"]
+  venue: "Journal of Biomedical Optics"
+  year: 2019
+  volume: "24"
+  number: "12"
+  pages: "126002"
+  doi: "10.1117/1.JBO.24.12.126002"
+  pdf: "https://drive.google.com/open?id=1PpdLYMPxkYTTgcBh4-XeTghV4ksVSMSq"
+  status: published
+
+- key: zhang2019lowcost
+  type: article
+  title: "Low-cost custom fabrication and mode-locked operation of an all-normal-dispersion femtosecond fiber laser for multiphoton microscopy"
+  authors: ["Zhang K", "Davoudzadeh N", "Ducourthial G", "Spring BQ"]
+  venue: "Journal of Visualized Experiments"
+  year: 2019
+  volume: "153"
+  pages: "e60160"
+  url: "https://www.jove.com/video/60160/low-cost-custom-fabrication-mode-locked-operation-an-all-normal"
+  pdf: "https://drive.google.com/open?id=1uanFIiXdQWYUkqTJuh-zjvSq_WjctI4x"
+  status: published
+
+- key: spring2019illuminating
+  type: article
+  title: "Illuminating the numbers: Integrating mathematical models to optimize photomedicine dosimetry and combination therapies"
+  authors: ["Spring BQ", "Lang RT", "Kercher EM", "Rizvi I", "Wenham RM", "Conejo-Garcia JR", "Hasan T", "Gatenby RA", "Enderling H"]
+  venue: "Frontiers in Physics"
+  year: 2019
+  volume: "7"
+  pages: "46"
+  doi: "10.3389/fphy.2019.00046"
+  pdf: "https://drive.google.com/file/d/1HwtHNZ9bxCnqQK0oGoQPW59cEEDrInR7/view?usp=sharing"
+  status: published
+
+- key: davoudzadeh2019fiberlaser
+  type: article
+  title: "Custom fabrication and mode-locked operation of a femtosecond fiber laser for multiphoton microscopy"
+  authors: ["Davoudzadeh N", "Ducourthial G", "Spring BQ"]
+  venue: "Scientific Reports"
+  year: 2019
+  volume: "9"
+  pages: "4233"
+  url: "https://rdcu.be/bqDaT"
+  pdf: "https://drive.google.com/file/d/1G2WSn-CbBHFYlMmWPJtnYrlWBbwtOv1f/view?usp=sharing"
+  status: published
+
+- key: spring2019mesothelioma
+  type: article
+  title: "3D culture models of malignant mesothelioma reveal a powerful interplay between photodynamic therapy and kinase suppression offering hope to reduce tumor recurrence"
+  authors: ["Spring BQ", "Kessel D"]
+  venue: "Photochemistry and Photobiology"
+  year: 2019
+  volume: "95"
+  pages: "462–463"
+  doi: "10.1111/php.13059"
+  pdf: "https://drive.google.com/file/d/1dmM351xQHPQYGKcjepioyVUs_Gl72cVz/view?usp=sharing"
+  status: published
+
+# ---------------------------------------------------------------- 2017 and earlier
+- key: obaid2017activatable
+  type: article
+  title: "Activatable clinical fluorophore-quencher antibody pairs as dual molecular probes for the enhanced specificity of image-guided surgery"
+  authors: ["Obaid G", "Spring BQ", "Bano S", "Hasan T"]
+  venue: "Journal of Biomedical Optics"
+  year: 2017
+  volume: "22"
+  number: "12"
+  pages: "121607"
+  doi: "10.1117/1.JBO.22.12.121607"
+  pdf: "https://drive.google.com/open?id=1OXtG1xhPoGaXpJ2b9epeQ8prE9ntocEu"
+  status: published
+
+- key: spring2016nanoliposome
+  type: article
+  title: "A photoactivable multi-inhibitor nanoliposome for tumour control and simultaneous inhibition of treatment escape pathways"
+  authors: ["Spring BQ", "Sears RB", "Zheng LZ", "Mai Z", "Watanabe R", "Sherwood ME", "Schoenfeld DA", "Pogue BW", "Pereira SP", "Villa E", "Hasan T"]
+  venue: "Nature Nanotechnology"
+  year: 2016
+  volume: "11"
+  pages: "378–387"
+  doi: "10.1038/nnano.2015.311"
+  pdf: "https://drive.google.com/open?id=1Fb3H8czkkmgItuD5iXYGhyfDfMiKfwgx"
+  status: published
+
+- key: tangutoori2016liposomes
+  type: article
+  title: "Simultaneous delivery of cytotoxic and biologic therapeutics using nanophotoactivatable liposomes enhances treatment efficacy in a mouse model of pancreatic cancer"
+  authors: ["Tangutoori S", "Spring BQ", "Mai Z", "Mensah L", "Palanisami A", "Hasan T"]
+  venue: "Nanomedicine: Nanotechnology, Biology and Medicine"
+  year: 2016
+  volume: "12"
+  pages: "223–234"
+  url: "http://www.nanomedjournal.com/article/S1549-9634%2815%2900173-2/abstract"
+  pdf: "https://drive.google.com/open?id=1H-MAA4MSjjdAxAK-uT9OZCrwcd0kDNEg"
+  status: published
+
+- key: spring2015resistance
+  type: article
+  title: "The role of photodynamic therapy in overcoming cancer drug resistance"
+  authors: ["Spring BQ", "Rizvi I", "Xu N", "Hasan T"]
+  venue: "Photochemical & Photobiological Sciences"
+  year: 2015
+  volume: "14"
+  pages: "1476–1491"
+  url: "http://pubs.rsc.org/en/Content/ArticleLanding/2015/PP/C4PP00495G"
+  pdf: "https://drive.google.com/open?id=18qT-yK422ibgcESPdgNXU7EWmu67cBJF"
+  status: published
+
+- key: mallidi2015optical
+  type: article
+  title: "Optical imaging, photodynamic therapy and optically-triggered combination treatments"
+  authors: ["Mallidi S", "Spring BQ", "Chang SK", "Vakoc BJ", "Hasan T"]
+  venue: "The Cancer Journal"
+  year: 2015
+  volume: "21"
+  number: "3"
+  pages: "194–205"
+  url: "https://insights.ovid.com/pubmed?pmid=26049699"
+  pdf: "https://drive.google.com/file/d/1KdRKL7Z6zOGCbtjYj32aHf4Xu9CurLxN/view?usp=sharing"
+  status: published
+
+- key: spring2014roc
+  type: article
+  title: "Microscale receiver operating characteristic analysis of micrometastasis recognition using activatable fluorescent probes indicates leukocyte imaging as a critical factor to enhance accuracy"
+  authors: ["Spring BQ", "Palanisami A", "Hasan T"]
+  venue: "Journal of Biomedical Optics"
+  year: 2014
+  volume: "19"
+  number: "6"
+  pages: "066006"
+  pdf: "https://drive.google.com/open?id=1l34pX3ziNjpiLQzl1OHbC39gSLNix3z3"
+  status: published
+
+- key: spring2014micrometastases
+  type: article
+  title: "Selective treatment and monitoring of disseminated cancer micrometastases in vivo using dual-function, activatable immunoconjugates"
+  authors: ["Spring BQ", "Abu-Yousif AO", "Palanisami A", "Rizvi I", "Zheng X", "Mai Z", "Anbil S", "Sears RB", "Mensah LB", "Goldschmidt R", "Erdem SS", "Oliva E", "Hasan T"]
+  venue: "Proceedings of the National Academy of Sciences USA"
+  year: 2014
+  volume: "111"
+  number: "10"
+  pages: "E933–E942"
+  url: "http://www.pnas.org/content/111/10/E933"
+  pdf: "https://drive.google.com/open?id=15nLJRW17Z16v2n2h6AyS90_pu6X3InXS"
+  status: published
+
+- key: spring2013microvascularity
+  type: article
+  title: "Efficient measurement of total tumor microvascularity ex vivo using a mathematical model to optimize volume subsampling"
+  authors: ["Spring BQ", "Palanisami A", "Zheng LZ", "Blatt AE", "Sears RB", "Hasan T"]
+  venue: "Journal of Biomedical Optics"
+  year: 2013
+  volume: "18"
+  number: "9"
+  pages: "096015"
+  pdf: "https://drive.google.com/open?id=1cLvBOc3bMSrM0dpOkA94x6Bwihz4kAru"
+  status: published
+
+- key: chen2012flim
+  type: incollection
+  title: "Fluorescence lifetime imaging comes of age: How to do it and how to interpret it"
+  authors: ["Chen YC", "Spring BQ", "Clegg RM"]
+  venue: "In: Spectroscopic Methods of Analysis: Methods and Protocols (Methods in Molecular Biology, vol. 875, ch. 1), W. M. Bujalowski, ed. Springer, New York"
+  year: 2012
+  pages: "1–22"
+  url: "https://books.google.com/books?id=WoGTpwAACAAJ"
+  status: published
+
+- key: kolossov2011fret
+  type: article
+  title: "Development of a high-dynamic range, GFP-based FRET probe sensitive to oxidative microenvironments"
+  authors: ["Kolossov VL", "Spring BQ", "Clegg RM", "Henry JJ", "Sokolowski A", "Kenis PJ", "Gaskins HR"]
+  venue: "Experimental Biology and Medicine"
+  year: 2011
+  volume: "236"
+  pages: "681–691"
+  doi: "10.1258/ebm.2011.011009"
+  pdf: "https://drive.google.com/open?id=1Y21dh5WU_sswfA8XnHPJAn1WdfI0oPwN"
+  status: published
+
+- key: celli2010imaging
+  type: article
+  title: "Imaging and photodynamic therapy: Mechanisms, monitoring and optimization"
+  authors: ["Celli JP", "Spring BQ", "Rizvi I", "Evans CL", "Samkoe K", "Verma S", "Pogue BW", "Hasan T"]
+  venue: "Chemical Reviews"
+  year: 2010
+  volume: "110"
+  number: "5"
+  pages: "2795–2838"
+  doi: "10.1021/cr900300p"
+  pdf: "https://drive.google.com/file/d/17vvNS9WfwGdqyYAnAnp9N0RPToBPVX-I/view?usp=sharing"
+  status: published
+
+- key: zhong2009microendoscopy
+  type: article
+  title: "In vivo high-resolution fluorescence microendoscopy for ovarian cancer detection and treatment monitoring"
+  authors: ["Zhong W", "Celli JP", "Rizvi I", "Mai Z", "Spring BQ", "Yun SH", "Hasan T"]
+  venue: "British Journal of Cancer"
+  year: 2009
+  volume: "101"
+  pages: "2015–2022"
+  url: "https://www.nature.com/articles/6605436"
+  pdf: "https://drive.google.com/file/d/1eaTkfj1zPmf4Uvb5sUW56Mq_Pmad9Oh7/view?usp=sharing"
+  status: published
+
+- key: spring2009denoising
+  type: article
+  title: "Image analysis for denoising full-field frequency-domain fluorescence lifetime images"
+  authors: ["Spring BQ", "Clegg RM"]
+  venue: "Journal of Microscopy"
+  year: 2009
+  volume: "235"
+  number: "Pt 2"
+  pages: "221–237"
+  doi: "10.1111/j.1365-2818.2009.03212.x"
+  pdf: "https://drive.google.com/open?id=18bRUIk4JYexzw1chHDpDV1wP8me4Kqoi"
+  status: published
+
+- key: spring2009fdflim
+  type: incollection
+  title: "Frequency-domain FLIM"
+  authors: ["Spring BQ", "Clegg RM"]
+  venue: "In: FLIM Microscopy in Biology and Medicine (ch. 5), A. Periasamy and R. M. Clegg, eds. Chapman & Hall/CRC, Boca Raton, FL"
+  year: 2009
+  pages: "117–144"
+  url: "https://books.google.com/books?id=ZwYHXLnz7eEC&pg=PA115"
+  status: published
+
+- key: chen2009modelfree
+  type: incollection
+  title: "General concerns of FLIM data representation and analysis: Frequency-domain model-free analysis"
+  authors: ["Chen YC", "Spring BQ", "Buranachai C", "Tong B", "Malachowski G", "Clegg RM"]
+  venue: "In: FLIM Microscopy in Biology and Medicine (ch. 11), A. Periasamy and R. M. Clegg, eds. Chapman & Hall/CRC, Boca Raton, FL"
+  year: 2009
+  pages: "291–339"
+  url: "https://books.google.com/books?id=ZwYHXLnz7eEC&pg=PA291"
+  status: published
+
+- key: kolossov2008linkers
+  type: article
+  title: "Engineering redox-sensitive linkers for genetically encoded FRET-based biosensors"
+  authors: ["Kolossov VL", "Spring BQ", "Sokolowski A", "Conour JE", "Clegg RM", "Kenis PJ", "Gaskins HR"]
+  venue: "Experimental Biology and Medicine"
+  year: 2008
+  volume: "233"
+  pages: "238–248"
+  doi: "10.3181/0707-RM-192"
+  pdf: "https://drive.google.com/open?id=1DGGLSiZ73Lkifs2lWdytfxHZvxTaRt_J"
+  status: published
+
+- key: spring2007mdna
+  type: article
+  title: "Fluorescence measurements of duplex DNA oligomers under conditions conducive for forming M-DNA (a metal-DNA complex)"
+  authors: ["Spring BQ", "Clegg RM"]
+  venue: "Journal of Physical Chemistry B"
+  year: 2007
+  volume: "111"
+  pages: "10040–10052"
+  doi: "10.1021/jp0725782"
+  pdf: "https://drive.google.com/open?id=1nm5SfiaMcJMNMrfgvfPSXMctULOBmPEi"
+  status: published
+
+- key: knox2003dipole
+  type: article
+  title: "Dipole strengths in the chlorophylls"
+  authors: ["Knox RS", "Spring BQ"]
+  venue: "Photochemistry and Photobiology"
+  year: 2003
+  volume: "77"
+  pages: "497–501"
+  url: "http://onlinelibrary.wiley.com/doi/10.1562/0031-8655%282003%290770497DSITC2.0.CO2/abstract"
+  pdf: "https://drive.google.com/open?id=1VdSVIVRRWtVEht9B4S6TGa0fFeEAzWnX"
+  status: published

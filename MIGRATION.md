@@ -17,6 +17,7 @@ Select-String -Path content\*,content\*\*,data\* -Pattern 'PLACEHOLDER'
 | Old page | New location | Notes |
 |---|---|---|
 | People `/people` | `data/people.yaml`, `content/people/_index.md`, photos in `assets/images/people/` | see below |
+| Publications `/publications` | `data/publications.yaml` (49), `data/patents.yaml` (5), `content/publications/_index.md` | see below |
 
 ### People
 
@@ -33,6 +34,18 @@ Select-String -Path content\*,content\*\*,data\* -Pattern 'PLACEHOLDER'
   - the Northeastern Physics logo link.
 - **Name used:** "Ivonne Lozano-Pope", the form in her bio. The old heading said "Ivonne Lozano".
 
+### Publications
+
+- **Migrated:** all 49 entries plus 5 patents and applications. The 5 entries without a year (1 submitted, 2 accepted, 2 accepted and under embargo) are listed under "Forthcoming", each with a status label. The Google Scholar link moved into the page intro.
+- **The old numbering (1–49) was dropped.** Entries are now grouped by year, newest first.
+- **DOIs:** taken only where the old link contained one explicitly (doi.org, `/doi/…`, nature.com, Springer and Frontiers paths). Everything else keeps the old publisher link as `url`. Google Drive PDFs are kept as `pdf`.
+- **Small fixes:**
+  - "long-wavelenth" → "long-wavelength" (Lang & Spring 2021).
+  - Missing comma "Ilday FO Spring BQ" → "Ilday FO, Spring BQ".
+  - Broken DOI link on Park et al. 2026 cleaned up to `10.1111/php.70149`.
+  - Patent title "Photoimmunotherapy-diven" → "Photoimmunotherapy-driven".
+- **Journal names** were expanded from abbreviations, e.g. "Photochem Photobiol" → "Photochemistry and Photobiology".
+
 ---
 
 ## Open TODOs (for the site owner)
@@ -45,3 +58,9 @@ Select-String -Path content\*,content\*\*,data\* -Pattern 'PLACEHOLDER'
 - [ ] Alumni `years` are often only "joined YYYY". Add end years and `now` (next position) where known.
 - [ ] The PI's email is shown as `b.spring@northeastern.edu`, decoded from the old site's "b dot spring at northeastern dot edu". Please confirm.
 - [ ] The large photo at the bottom of the old People page was not migrated. Tell me if it's a group photo you want on the site.
+
+### Publications
+- [ ] **DOIs are missing** for 17 entries that link only to a publisher page. They include Price 2026 (BOE 17:202), Zhang 2024 (BOE 15:6324), Zhang 2019 (JoVE e60160), Davoudzadeh 2019 (Sci Rep 9:4233), Zhong 2009 (BJC), Tangutoori 2016, Spring 2015 (PPS), Mallidi 2015, Spring 2014 (PNAS), Knox 2003, and the book chapters. Four more have no link at all: Spring 2014 (JBO 19:066006), Spring 2013 (JBO), and the two embargoed papers. Add a `doi:` to each when you can; it's the most durable link.
+- [ ] Kercher et al. "Cancer cell-targeted and activatable photoimmunotherapy spares T cells…" is listed as 2019, but its volume is 96(2), which is the 2020 issue. Please confirm the year.
+- [ ] Check whether the 2 embargoed papers (Kercher, Sci Rep; Lang, J Biomed Opt) and the 2 accepted ones (Saad, Nat Commun; Kercher, JID) are out now. If so, add `year`, `doi`, and set `status: published`.
+- [ ] **Copyright:** several PDFs are publisher versions. Confirm that sharing them on Google Drive is allowed under each journal's policy.
