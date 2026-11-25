@@ -34,12 +34,12 @@
 
 - name: "Quantitative Personalized Oncology Lab"
   pi: "Heiko Enderling, Ph.D."
-  institution: "H. Lee Moffitt Cancer Center and Research Institute"
+  institution: "MD Anderson Cancer Center (previously Moffitt Cancer Center)"
   description: >-
     Builds mathematical and computational models of tumor growth, evolution and tumor–immune interactions,
     calibrated with preclinical and clinical data, to design personalized and adaptive therapies.
     Together we study light-based treatments that stimulate the immune system alongside immunotherapy.
-  url: "http://labpages2.moffitt.org/enderling/"
+  url: "https://faculty.mdanderson.org/profiles/heiko_enderling.html"
 
 - name: "Integrated Mathematical Oncology"
   pi: "Robert A. Gatenby, M.D."

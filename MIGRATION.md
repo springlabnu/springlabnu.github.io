@@ -21,6 +21,9 @@ Select-String -Path content\*,content\*\*,data\* -Pattern 'PLACEHOLDER'
 | Research `/research` | `data/research.yaml` (3 pillars, 7 projects, funding), `content/research/_index.md`, images in `assets/images/research/` | see below |
 | Software `/software` | **Platforms**: `data/platforms.yaml`, `content/platforms/_index.md`, images in `assets/images/platforms/` | renamed page |
 | Collaborators `/collaborators` | `data/collaborators.yaml` (7), `content/collaborators/_index.md` | see below |
+| Home `/home`: intro, photos | `content/_index.md`, `data/home.yaml` (teasers), `assets/images/research/home-photo-*.jpg` | see below |
+| Home `/home`: News, 2021 onward | `content/news/*.md` (23 items) | see below |
+| Home `/home`: News before 2021 | `content/older-news.md` (one archive page at `/older-news/`, linked from the bottom of News) | see below |
 
 ### People
 
@@ -95,6 +98,24 @@ Select-String -Path content\*,content\*\*,data\* -Pattern 'PLACEHOLDER'
   - the Knox / Förster frisbee anecdote and the photo adapted from Knox, JBO 2012;
   - the "5 degrees from Einstein" trivia.
 
+### Home and News
+
+- **Intro:** the two mission paragraphs became one plain-language paragraph. The headline is kept.
+- **Buttons:** the old buttons ("Learn more about our research", "List of Publications", "Contact Professor Spring") are replaced by the hero buttons plus 6 teaser cards (`data/home.yaml`).
+- **Social icons** moved to the footer.
+- **Photos:** the two home photos (credited to Bryan Spring and Nima Davoudzadeh) are now used on teaser cards.
+- **News since 2021:** 23 items, one Markdown file each, all reworded. That includes the 4 items from Jan–Aug 2021 that sat in the old "Older News" section.
+- **News before 2021:** about 10 items on `/older-news/`, reworded and grouped by year. Two Northeastern article links had no date on the old page; the one whose URL contains 2016/02 is listed as Feb 2016, the other as "Undated".
+- **News images kept:** the three thesis-defense photos (Harman, Timilsina, Price) and two figures from the lab's own papers (Lang 2021, Harman 2022). The Electro Optics item reuses the lab's LED-platform photo.
+- **News images dropped:**
+  - graphics owned by others: Scialog, the Electro Optics cover, the IPA podcast banner, the Smith Family event collage, the Northeastern Global News photo, and two Northeastern-news thumbnails;
+  - individual headshots attached to news items (Yuchen Cheng, Annabel Devault, Rami Taha, Jvalanti Prasad).
+- **Facts from news applied to other pages:**
+  - Sophia Renauld's next step (Harvard–MIT M.D.–Ph.D.) → `people.yaml`.
+  - Eric Kercher as the lab's first Ph.D. graduate → `people.yaml`.
+  - Heiko Enderling's affiliation: the June 2023 news names MD Anderson, so `collaborators.yaml` now says MD Anderson and links his MD Anderson profile.
+- **Dropped from news text:** hashtags and Twitter handles, bit.ly links, the claim that the denoising code "will be released soon at springlabnu.com/software", and long praise passages, which were shortened.
+
 ---
 
 ## Open TODOs (for the site owner)
@@ -107,6 +128,13 @@ Select-String -Path content\*,content\*\*,data\* -Pattern 'PLACEHOLDER'
 - [ ] Alumni `years` are often only "joined YYYY". Add end years and `now` (next position) where known.
 - [ ] The PI's email is shown as `b.spring@northeastern.edu`, decoded from the old site's "b dot spring at northeastern dot edu". Please confirm.
 - [ ] The large photo at the bottom of the old People page was not migrated. Tell me if it's a group photo you want on the site.
+
+### Home and News
+- [ ] **Home video:** add a YouTube or Vimeo URL as `hero_video:` in `content/_index.md`. A placeholder box shows until then.
+- [ ] **Two people not on the People page:** Yuchen Cheng (2024 news) and Annabel Devault (2023 news) appear in news but weren't listed as members or alumni. Add them to `people.yaml` as alumni if appropriate.
+- [ ] **June 2020 statement on racial injustice:** it's summarized, not quoted, in `content/older-news.md`. Decide whether to keep the summary, restore the full original wording (I can't copy it verbatim under the migration rules, but you can paste it), or remove it.
+- [ ] **Denoising code:** the July 2022 news said it would be released. If it's public now (e.g. inside HyperViewer), add a link.
+- [ ] **Home photos:** check that the teaser images on the home page are the ones you want.
 
 ### Research
 - [ ] **The old Research text may be years out of date.** Check that the 7 projects still describe current work. Two things to check in particular: whether the Cellaria Bio collaboration is still active, and the target cancers listed for microendoscopy (brain, pancreas, ovary).

@@ -1,28 +1,30 @@
 # Home page teaser buttons ("poster" cards linking into the site), in display order.
-# image: optional path under assets/images/ (cropped to 3:2)
+#   title, text  short label and one-line hook
+#   link         site path
+#   image        optional path under assets/images/ (cropped to 3:2)
 
 teasers:
   - title: "Join the lab"
-    text: "[PLACEHOLDER] Undergraduates: volunteer in a research lab."
+    text: "Undergraduates: volunteer in a real research lab and learn hands-on."
     link: "/join/"
-    image: ""
+    image: "research/lab-cell-culture.jpg"
   - title: "Research"
-    text: "[PLACEHOLDER] Light-based tools to see and treat cancer."
+    text: "Light-activated drugs, tiny microscopes, and the math behind them."
     link: "/research/"
-    image: ""
+    image: "research/home-photo-spring.jpg"
   - title: "Platforms"
-    text: "[PLACEHOLDER] Open-source software and hardware we share."
+    text: "Open-source software and hardware we built and share."
     link: "/platforms/"
-    image: ""
+    image: "platforms/led-array-2.jpg"
   - title: "Publications"
-    text: "[PLACEHOLDER] Papers and patents."
+    text: "Our papers and patents, with free PDFs."
     link: "/publications/"
-    image: ""
+    image: "research/home-photo-davoudzadeh.jpg"
   - title: "People"
-    text: "[PLACEHOLDER] Meet the team."
+    text: "Meet the physicists, engineers and biologists in the lab."
     link: "/people/"
-    image: ""
+    image: "research/lab-optics.jpg"
   - title: "News"
-    text: "[PLACEHOLDER] What's new in the lab."
+    text: "Grants, graduations, awards and new papers."
     link: "/news/"
-    image: ""
+    image: "news/2025-07-liam-price-phd.jpg"
