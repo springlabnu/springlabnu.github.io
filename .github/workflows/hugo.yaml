@@ -1,0 +1,85 @@
+# Build the Hugo site and deploy it to GitHub Pages.
+#
+# - Push to main        → build + deploy (live site updates in ~1–2 minutes)
+# - Pull request        → build only (catches errors before merging; nothing is deployed)
+# - Actions tab → "Run workflow" → manual rebuild + deploy
+#
+# One-time repo setting: Settings → Pages → Build and deployment → Source: "GitHub Actions".
+# Hugo version is pinned below. Keep it identical to the version admins use locally
+# (see README.md / CLAUDE.md). To upgrade Hugo, change HUGO_VERSION here AND in those docs.
+
+name: Build and deploy site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one deployment at a time; don't cancel a deployment that is already running.
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  HUGO_VERSION: "0.170.1"   # standard edition (not "extended"); the site needs no Sass/SCSS
+  TZ: America/New_York
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Hugo ${{ env.HUGO_VERSION }}
+        run: |
+          wget -nv -O "${{ runner.temp }}/hugo.deb" \
+            "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-amd64.deb"
+          sudo dpkg -i "${{ runner.temp }}/hugo.deb"
+          hugo version
+
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Pages
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@v5
+
+      # Cache processed images (WebP conversions) so rebuilds are fast.
+      - name: Cache Hugo resources
+        uses: actions/cache@v4
+        with:
+          path: resources
+          key: hugo-resources-${{ env.HUGO_VERSION }}-${{ hashFiles('assets/**', 'themes/**/assets/**') }}
+          restore-keys: hugo-resources-${{ env.HUGO_VERSION }}-
+
+      # baseURL comes from hugo.toml (the single source of truth); it is not overridden here.
+      - name: Build
+        env:
+          HUGO_ENVIRONMENT: production
+        run: hugo --gc --minify
+
+      - name: Upload site artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
