@@ -1,0 +1,32 @@
+# Research page data. Schema: see CLAUDE.md → "research.yaml".
+# pillars:  the three research pillars (id is referenced by projects)
+# projects: pillars = list of pillar ids; publications = keys from data/publications.yaml
+# funding:  list of funders shown at the bottom of the Research page
+
+pillars:
+  - id: cell-culture
+    title: "Cell Culture"
+    summary: "[PLACEHOLDER] One or two sentences on the lab's cell-culture work."
+    image: ""
+  - id: optics
+    title: "Optics & Photonics"
+    summary: "[PLACEHOLDER] One or two sentences on the lab's optics work."
+    image: ""
+  - id: computational
+    title: "Computation"
+    summary: "[PLACEHOLDER] One or two sentences on the lab's computational work."
+    image: ""
+
+projects:
+  - title: "[PLACEHOLDER] Example project"
+    pillars: [optics, computational]
+    summary: "[PLACEHOLDER] Short project description (Markdown allowed)."
+    image: ""
+    image_alt: ""
+    links: []
+    publications: [placeholder2026example]
+
+funding:
+  - name: "[PLACEHOLDER] Funder name"
+    note: ""
+    url: ""

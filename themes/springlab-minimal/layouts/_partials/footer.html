@@ -1,0 +1,29 @@
+{{- $c := site.Params.contact }}
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <section aria-labelledby="footer-contact">
+      <h2 id="footer-contact">Contact</h2>
+      <address>
+        {{ with $c.pi }}<strong>{{ . }}</strong><br>{{ end }}
+        {{ site.Title }}, {{ site.Params.institution }}<br>
+        {{ range $c.address }}{{ . }}<br>{{ end }}
+        {{ with $c.email }}<a href="mailto:{{ . }}">{{ . }}</a>{{ end }}
+      </address>
+    </section>
+    <section aria-labelledby="footer-links">
+      <h2 id="footer-links">Follow</h2>
+      <ul class="plain">
+        {{ with site.Params.social.instagram }}<li><a href="{{ . }}" rel="noopener">Instagram</a></li>{{ end }}
+        {{ with site.Params.social.twitter }}<li><a href="{{ . }}" rel="noopener">X / Twitter</a></li>{{ end }}
+        {{ with site.Params.social.github }}<li><a href="{{ . }}" rel="noopener">GitHub</a></li>{{ end }}
+      </ul>
+    </section>
+    <section aria-labelledby="footer-join">
+      <h2 id="footer-join">Get involved</h2>
+      <p>Undergraduates interested in research are welcome to <a href="{{ "/join/" | relURL }}">apply to volunteer</a>.</p>
+    </section>
+  </div>
+  <div class="wrap footer-meta">
+    <p>&copy; {{ now.Year }} {{ site.Title }}, <a href="{{ site.Params.institutionURL }}">{{ site.Params.institution }}</a></p>
+  </div>
+</footer>

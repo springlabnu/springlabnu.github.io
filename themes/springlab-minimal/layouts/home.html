@@ -1,0 +1,51 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <p class="eyebrow">{{ site.Title }} · {{ site.Params.institution }}</p>
+      <h1>{{ .Params.headline | default .Title }}</h1>
+      {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+      <p class="hero-actions">
+        <a class="button button-primary" href="{{ "/join/" | relURL }}">Join the lab</a>
+        <a class="button" href="{{ "/research/" | relURL }}">Our research</a>
+      </p>
+    </div>
+    <div class="hero-media">
+      {{ partial "video-embed.html" (dict "url" .Params.hero_video "title" .Params.hero_video_title) }}
+    </div>
+  </div>
+</section>
+
+{{ with hugo.Data.home.teasers }}
+<section class="wrap teasers" aria-label="Explore the lab">
+  <ul class="teaser-grid">
+    {{ range . }}
+    <li class="teaser">
+      <a href="{{ .link | relURL }}">
+        {{ with .image }}<span class="teaser-media">{{ partial "img.html" (dict "src" . "alt" "" "width" 600 "crop" "600x400") }}</span>{{ end }}
+        <span class="teaser-body">
+          <span class="teaser-title">{{ .title }}</span>
+          {{ with .text }}<span class="teaser-text">{{ . }}</span>{{ end }}
+        </span>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
+
+{{ with site.GetPage "/news" }}
+{{ $recent := first 3 .Pages.ByDate.Reverse }}
+{{ if $recent }}
+<section class="wrap home-news" aria-labelledby="home-news-h">
+  <h2 id="home-news-h">Latest news</h2>
+  <ul class="news-list compact">
+    {{ range $recent }}
+    <li><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time> <span>{{ .Title }}</span></li>
+    {{ end }}
+  </ul>
+  <p><a href="{{ .RelPermalink }}">All news →</a></p>
+</section>
+{{ end }}
+{{ end }}
+{{ end }}

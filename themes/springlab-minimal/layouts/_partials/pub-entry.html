@@ -1,0 +1,15 @@
+{{- /* One publication entry from data/publications.yaml. Context: the entry map. */ -}}
+{{- $status := .status | default "published" -}}
+<span class="pub">
+  <span class="pub-authors">{{ delimit (.authors | default slice) ", " }}.</span>
+  <span class="pub-title">{{ .title }}.</span>
+  {{ with .venue }}<cite class="pub-venue">{{ . }}</cite>{{ end }}
+  {{- with .volume }} {{ . }}{{ end }}{{ with .number }}({{ . }}){{ end }}{{ with .pages }}, {{ . }}{{ end }}{{ with .year }} ({{ . }}){{ end }}.
+  {{ if ne $status "published" }}<span class="badge badge-{{ $status }}">{{ $status | humanize }}</span>{{ end }}
+  {{ with .note }}<span class="pub-note">{{ . }}</span>{{ end }}
+  <span class="pub-links">
+    {{ with .doi }}<a href="https://doi.org/{{ . }}">DOI</a>{{ end }}
+    {{ with .url }}<a href="{{ . }}">Link</a>{{ end }}
+    {{ with .pdf }}<a href="{{ . }}">PDF</a>{{ end }}
+  </span>
+</span>

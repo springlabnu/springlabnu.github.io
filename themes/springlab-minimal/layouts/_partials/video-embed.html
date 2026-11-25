@@ -1,0 +1,22 @@
+{{- /*
+  Theme partial for the home-page hero video (front matter `hero_video` on content/_index.md).
+  Accepts a YouTube or Vimeo URL. Mirrors the project shortcode layouts/shortcodes/video.html.
+  Context: dict "url" "title"
+*/ -}}
+{{- $url := .url | default "" -}}
+{{- $embed := "" -}}
+{{- with findRESubmatch `(?:youtube(?:-nocookie)?\.com/(?:watch\?v=|embed/|shorts/)|youtu\.be/)([A-Za-z0-9_-]{11})` $url 1 -}}
+  {{- $embed = printf "https://www.youtube-nocookie.com/embed/%s" (index (index . 0) 1) -}}
+{{- end -}}
+{{- with findRESubmatch `vimeo\.com/(?:video/)?([0-9]+)` $url 1 -}}
+  {{- $embed = printf "https://player.vimeo.com/video/%s" (index (index . 0) 1) -}}
+{{- end -}}
+{{- if $embed -}}
+<div class="embed embed-video">
+  <iframe src="{{ $embed }}" title="{{ .title | default "Spring Lab video" }}" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</div>
+{{- else -}}
+<div class="embed embed-video embed-video-placeholder" role="img" aria-label="Video placeholder">
+  <span>Lab video coming soon</span>
+</div>
+{{- end -}}

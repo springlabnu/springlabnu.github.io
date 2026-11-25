@@ -1,0 +1,29 @@
+{{- /*
+  Responsive, compressed image from assets/images/.
+  Params (dict):
+    src    path relative to assets/images/ (e.g. "people/bryan-spring.jpg"). Required.
+    alt    alt text. Required for meaningful images; pass "" for decorative ones.
+    width  target width in px (default 800). A 2x version is also generated.
+    crop   optional "WxH" to fill/crop (e.g. "400x400" for headshots).
+    class  optional CSS class.
+  Output is WebP. Missing files render nothing (and log a warning), so a typo never breaks the build.
+*/ -}}
+{{- $src := .src -}}
+{{- $alt := .alt | default "" -}}
+{{- $w := .width | default 800 -}}
+{{- with resources.Get (printf "images/%s" $src) -}}
+  {{- $img := . -}}
+  {{- $one := "" -}}{{- $two := "" -}}
+  {{- if $.crop -}}
+    {{- $dims := split $.crop "x" -}}
+    {{- $cw := int (index $dims 0) -}}{{- $ch := int (index $dims 1) -}}
+    {{- $one = $img.Fill (printf "%dx%d smart webp q80" $cw $ch) -}}
+    {{- $two = $img.Fill (printf "%dx%d smart webp q75" (mul $cw 2) (mul $ch 2)) -}}
+  {{- else -}}
+    {{- $one = $img.Resize (printf "%dx webp q80" (math.Min $w $img.Width | int)) -}}
+    {{- $two = $img.Resize (printf "%dx webp q75" (math.Min (mul $w 2) $img.Width | int)) -}}
+  {{- end -}}
+  <img src="{{ $one.RelPermalink }}" srcset="{{ $one.RelPermalink }} 1x, {{ $two.RelPermalink }} 2x" width="{{ $one.Width }}" height="{{ $one.Height }}" alt="{{ $alt }}" loading="lazy" decoding="async"{{ with $.class }} class="{{ . }}"{{ end }}>
+{{- else -}}
+  {{- if $src }}{{ warnf "img partial: image not found: assets/images/%s" $src }}{{ end -}}
+{{- end -}}

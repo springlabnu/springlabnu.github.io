@@ -1,0 +1,19 @@
+{{- /*
+  Project shortcode (lives outside the theme so it survives a theme swap).
+  Embeds the undergraduate volunteer Google Form configured in hugo.toml → [params.join].
+
+  Usage in Markdown:
+    {{< google-form >}}
+    {{< google-form height="1400" >}}
+*/ -}}
+{{- $embed := site.Params.join.formEmbedURL -}}
+{{- $link := site.Params.join.formURL | default $embed -}}
+{{- $height := .Get "height" | default "1200" -}}
+{{- if $embed -}}
+<div class="embed embed-form">
+  <iframe src="{{ $embed }}" title="Undergraduate volunteer application form" height="{{ $height }}" loading="lazy">Loading…</iframe>
+</div>
+<p class="embed-fallback">Form not loading? <a href="{{ $link }}" target="_blank" rel="noopener">Open the application form in a new tab</a>.</p>
+{{- else -}}
+<p class="embed-placeholder">[PLACEHOLDER] The application form will appear here.</p>
+{{- end -}}

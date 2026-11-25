@@ -1,0 +1,41 @@
+{{ define "main" }}
+{{- $items := hugo.Data.platforms | default slice }}
+{{- $pubs := hugo.Data.publications | default slice }}
+{{- $kinds := slice
+  (dict "id" "software" "title" "Software")
+  (dict "id" "hardware" "title" "Hardware")
+  (dict "id" "instrument" "title" "Instruments") }}
+<article class="wrap page">
+  {{ partial "page-head.html" . }}
+
+  {{ range $kinds }}
+  {{ $k := . }}
+  {{ with where $items "kind" $k.id }}
+  <section aria-labelledby="kind-{{ $k.id }}">
+    <h2 id="kind-{{ $k.id }}">{{ $k.title }}</h2>
+    <ul class="card-grid cols-2">
+      {{ range . }}
+      {{ $p := . }}
+      <li class="card platform">
+        {{ with .image }}<div class="card-media">{{ partial "img.html" (dict "src" . "alt" ($p.image_alt | default "") "width" 640) }}</div>{{ end }}
+        <h3>{{ .name }}</h3>
+        {{ with .summary }}<div class="prose">{{ . | markdownify }}</div>{{ end }}
+        <ul class="inline-links">
+          {{ with .repo }}<li><a href="{{ . }}">Source code</a></li>{{ end }}
+          {{ with .docs }}<li><a href="{{ . }}">Documentation</a></li>{{ end }}
+          {{ with .license }}<li><span class="meta">License: {{ . }}</span></li>{{ end }}
+        </ul>
+        {{ with .publications }}
+        <details class="related-pubs">
+          <summary>How to cite / related papers</summary>
+          <ul>{{ range . }}{{ $key := . }}{{ range where $pubs "key" $key }}<li>{{ partial "pub-entry.html" . }}</li>{{ end }}{{ end }}</ul>
+        </details>
+        {{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+  {{ end }}
+</article>
+{{ end }}

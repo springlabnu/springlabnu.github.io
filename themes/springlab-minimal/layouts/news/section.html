@@ -1,0 +1,21 @@
+{{ define "main" }}
+<article class="wrap page">
+  {{ partial "page-head.html" . }}
+  <ol class="news-list">
+    {{ range .Pages.ByDate.Reverse }}
+    {{ $item := . }}
+    <li class="news-item" id="{{ .File.ContentBaseName }}">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      <div class="news-body">
+        <h2 class="h3">{{ with .Params.link }}<a href="{{ . }}">{{ end }}{{ .Title }}{{ with .Params.link }}</a>{{ end }}</h2>
+        {{ with .Params.image }}<div class="news-media">{{ partial "img.html" (dict "src" . "alt" ($item.Params.image_alt | default "") "width" 560) }}</div>{{ end }}
+        <div class="prose">{{ .Content }}</div>
+      </div>
+    </li>
+    {{ end }}
+  </ol>
+  {{ with .Params.older_news }}{{ with site.GetPage . }}
+  <p class="older-news-link"><a href="{{ .RelPermalink }}">{{ .Title }} →</a></p>
+  {{ end }}{{ end }}
+</article>
+{{ end }}

@@ -1,0 +1,86 @@
+# Spring Lab website — Hugo configuration
+# baseURL is defined ONLY here. Change it when the custom domain (springlabnu.com) is set up.
+baseURL = "https://springlabnu.github.io/"
+locale = "en-US"
+title = "Spring Lab"
+
+# The theme is selected by this one line. To swap themes, put the new theme in themes/<name>/
+# and change this value. See CLAUDE.md → "Swap the theme" for the data contract a theme must honor.
+theme = "springlab-minimal"
+
+disableKinds = ["taxonomy", "term"]
+enableRobotsTXT = true
+
+[markup.goldmark.renderer]
+  unsafe = false   # no raw HTML in Markdown; use shortcodes in layouts/shortcodes/ instead
+
+[imaging]
+  resampleFilter = "Lanczos"
+  [imaging.webp]
+    quality = 80
+
+# ---------------------------------------------------------------------------
+# Navigation (order is fixed by weight)
+# ---------------------------------------------------------------------------
+[[menus.main]]
+  name = "Home"
+  pageRef = "/"
+  weight = 10
+[[menus.main]]
+  name = "Research"
+  pageRef = "/research"
+  weight = 20
+[[menus.main]]
+  name = "Platforms"
+  pageRef = "/platforms"
+  weight = 30
+[[menus.main]]
+  name = "Publications"
+  pageRef = "/publications"
+  weight = 40
+[[menus.main]]
+  name = "People"
+  pageRef = "/people"
+  weight = 50
+[[menus.main]]
+  name = "Collaborators"
+  pageRef = "/collaborators"
+  weight = 60
+[[menus.main]]
+  name = "News"
+  pageRef = "/news"
+  weight = 70
+[[menus.main]]
+  name = "Join Us"
+  identifier = "join"
+  pageRef = "/join"
+  weight = 80
+
+# ---------------------------------------------------------------------------
+# Site-wide settings (theme-agnostic; any theme should read these)
+# ---------------------------------------------------------------------------
+[params]
+  description = "Spring Lab at Northeastern University: photomedicine and biophysical microscopy of cancer."
+  institution = "Northeastern University"
+  institutionURL = "https://www.northeastern.edu/"
+
+  [params.contact]
+    pi = "Bryan Q. Spring, Ph.D."
+    email = "b.spring@northeastern.edu"
+    address = [
+      "Interdisciplinary Science and Engineering Complex (ISEC), Room 314",
+      "805 Columbus Ave",
+      "Boston, MA 02120",
+    ]
+
+  [params.social]
+    instagram = "https://www.instagram.com/springlabnu"
+    twitter = "https://twitter.com/springlabnu"
+    github = "https://github.com/springlabnu"
+
+  [params.join]
+    # Google Form for undergraduate volunteers.
+    # formEmbedURL: the form's ".../viewform?embedded=true" URL (used by the google-form shortcode).
+    # formURL: the normal share link (shown as a fallback "open in new tab" link).
+    formURL = ""
+    formEmbedURL = ""

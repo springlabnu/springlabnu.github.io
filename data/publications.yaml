@@ -1,0 +1,22 @@
+# Publications. Field names follow BibTeX so that a future importer
+# (scripts/bib2yaml) can generate this file from a .bib export.
+# Schema: see CLAUDE.md → "publications.yaml".
+# type:   article | inproceedings | incollection | book | thesis | preprint | misc
+# status: published | accepted | submitted | embargoed   (anything but "published" shows a label)
+# year:   omit for items without a year yet; they are listed under "Forthcoming"
+# pdf:    optional link to a PDF (e.g. Google Drive)
+
+- key: placeholder2026example
+  type: article
+  title: "[PLACEHOLDER] Example publication title"
+  authors: ["A. Author", "B. Q. Spring"]
+  venue: "Journal Name"
+  year: 2026
+  volume: ""
+  number: ""
+  pages: ""
+  doi: ""
+  url: ""
+  pdf: ""
+  status: accepted
+  note: ""

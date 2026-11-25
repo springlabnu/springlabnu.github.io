@@ -1,0 +1,8 @@
+# Collaborating labs, listed in the order shown. Schema: see CLAUDE.md → "collaborators.yaml".
+# description: the partner lab's own short description of itself (reworded, 1–2 sentences).
+
+- name: "[PLACEHOLDER] Example Partner Lab"
+  pi: "[PLACEHOLDER] PI Name"
+  institution: "[PLACEHOLDER] Institution"
+  description: "[PLACEHOLDER] The partner lab's description of its own work."
+  url: ""

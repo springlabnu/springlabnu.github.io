@@ -1,0 +1,15 @@
+# Published open-source platforms (software, hardware, instruments).
+# Schema: see CLAUDE.md → "platforms.yaml".
+# kind:         software | hardware | instrument
+# image:        path under assets/images/ (optional), with image_alt
+# publications: keys from data/publications.yaml (shown as "How to cite")
+
+- name: "[PLACEHOLDER] Example Platform"
+  kind: software
+  summary: "[PLACEHOLDER] What it does and who it is for."
+  repo: ""
+  docs: ""
+  license: ""
+  image: ""
+  image_alt: ""
+  publications: []

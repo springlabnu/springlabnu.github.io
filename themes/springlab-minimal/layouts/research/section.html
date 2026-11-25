@@ -1,0 +1,64 @@
+{{ define "main" }}
+{{- $d := hugo.Data.research }}
+{{- $pubs := hugo.Data.publications | default slice }}
+<article class="wrap page">
+  {{ partial "page-head.html" . }}
+
+  {{ with $d.pillars }}
+  <section aria-labelledby="pillars-h">
+    <h2 id="pillars-h">Three pillars</h2>
+    <ul class="card-grid cols-3">
+      {{ range . }}
+      <li class="card" id="pillar-{{ .id }}">
+        {{ with .image }}<div class="card-media">{{ partial "img.html" (dict "src" . "alt" "" "width" 600 "crop" "600x360") }}</div>{{ end }}
+        <h3>{{ .title }}</h3>
+        {{ with .summary }}<p>{{ . }}</p>{{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+
+  {{ with $d.projects }}
+  {{- $pillars := $d.pillars }}
+  <section aria-labelledby="projects-h">
+    <h2 id="projects-h">Projects</h2>
+    <ul class="project-list">
+      {{ range . }}
+      {{- $p := . }}
+      <li class="project">
+        {{ with .image }}<div class="project-media">{{ partial "img.html" (dict "src" . "alt" ($p.image_alt | default "") "width" 480) }}</div>{{ end }}
+        <div class="project-body">
+          <h3>{{ .title }}</h3>
+          {{ with .pillars }}
+          <p class="tags">
+            {{ range . }}{{ $id := . }}{{ range where $pillars "id" $id }}<a class="tag" href="#pillar-{{ .id }}">{{ .title }}</a> {{ end }}{{ end }}
+          </p>
+          {{ end }}
+          {{ with .summary }}<div class="prose">{{ . | markdownify }}</div>{{ end }}
+          {{ with .links }}
+          <ul class="inline-links">{{ range . }}<li><a href="{{ .url }}">{{ .label }}</a></li>{{ end }}</ul>
+          {{ end }}
+          {{ with .publications }}
+          <details class="related-pubs">
+            <summary>Related publications</summary>
+            <ul>{{ range . }}{{ $k := . }}{{ range where $pubs "key" $k }}<li>{{ partial "pub-entry.html" . }}</li>{{ end }}{{ end }}</ul>
+          </details>
+          {{ end }}
+        </div>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+
+  {{ with $d.funding }}
+  <section aria-labelledby="funding-h">
+    <h2 id="funding-h">Funding</h2>
+    <ul class="plain funding-list">
+      {{ range . }}<li>{{ with .url }}<a href="{{ . }}">{{ end }}{{ .name }}{{ with .url }}</a>{{ end }}{{ with .note }} — {{ . }}{{ end }}</li>{{ end }}
+    </ul>
+  </section>
+  {{ end }}
+</article>
+{{ end }}

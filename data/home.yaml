@@ -1,0 +1,28 @@
+# Home page teaser buttons ("poster" cards linking into the site), in display order.
+# image: optional path under assets/images/ (cropped to 3:2)
+
+teasers:
+  - title: "Join the lab"
+    text: "[PLACEHOLDER] Undergraduates: volunteer in a research lab."
+    link: "/join/"
+    image: ""
+  - title: "Research"
+    text: "[PLACEHOLDER] Light-based tools to see and treat cancer."
+    link: "/research/"
+    image: ""
+  - title: "Platforms"
+    text: "[PLACEHOLDER] Open-source software and hardware we share."
+    link: "/platforms/"
+    image: ""
+  - title: "Publications"
+    text: "[PLACEHOLDER] Papers and patents."
+    link: "/publications/"
+    image: ""
+  - title: "People"
+    text: "[PLACEHOLDER] Meet the team."
+    link: "/people/"
+    image: ""
+  - title: "News"
+    text: "[PLACEHOLDER] What's new in the lab."
+    link: "/news/"
+    image: ""

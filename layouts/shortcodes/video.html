@@ -1,0 +1,23 @@
+{{- /*
+  Project shortcode (lives outside the theme so it survives a theme swap).
+  Embeds a YouTube or Vimeo video. Never commit video files to the repo.
+
+  Usage in Markdown:
+    {{< video url="https://www.youtube.com/watch?v=XXXXXXXXXXX" title="Tour of the lab" >}}
+*/ -}}
+{{- $url := .Get "url" | default (.Get 0) -}}
+{{- $title := .Get "title" | default "Embedded video" -}}
+{{- $embed := "" -}}
+{{- with findRESubmatch `(?:youtube(?:-nocookie)?\.com/(?:watch\?v=|embed/|shorts/)|youtu\.be/)([A-Za-z0-9_-]{11})` $url 1 -}}
+  {{- $embed = printf "https://www.youtube-nocookie.com/embed/%s" (index (index . 0) 1) -}}
+{{- end -}}
+{{- with findRESubmatch `vimeo\.com/(?:video/)?([0-9]+)` $url 1 -}}
+  {{- $embed = printf "https://player.vimeo.com/video/%s" (index (index . 0) 1) -}}
+{{- end -}}
+{{- if $embed -}}
+<div class="embed embed-video">
+  <iframe src="{{ $embed }}" title="{{ $title }}" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</div>
+{{- else -}}
+<p class="embed-placeholder">[PLACEHOLDER] Video coming soon.</p>
+{{- end -}}

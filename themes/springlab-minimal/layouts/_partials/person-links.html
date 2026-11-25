@@ -1,0 +1,15 @@
+{{- /* Context: the `links` map of a person entry (may be nil). */ -}}
+{{- $labels := dict "email" "Email" "website" "Website" "scholar" "Google Scholar" "linkedin" "LinkedIn" "orcid" "ORCID" "github" "GitHub" "cv" "CV" "profile" "Faculty profile" -}}
+{{- $order := slice "email" "website" "profile" "scholar" "orcid" "linkedin" "github" "cv" -}}
+{{- with . -}}
+{{- $links := . -}}
+<ul class="inline-links person-links">
+  {{- range $order -}}
+    {{- $v := index $links . -}}
+    {{- if $v -}}
+    {{- $href := cond (eq . "email") (printf "mailto:%s" $v) $v -}}
+    <li><a href="{{ $href }}">{{ index $labels . }}</a></li>
+    {{- end -}}
+  {{- end -}}
+</ul>
+{{- end -}}

@@ -1,0 +1,25 @@
+# People in the Spring Lab. One entry per person. Schema: see CLAUDE.md → "people.yaml".
+# group:  pi | postdoc | staff | grad | undergrad
+# status: current | alumni
+# photo:  path under assets/images/ (e.g. people/jane-doe.jpg); optional
+# links:  any of email, website, profile, scholar, orcid, linkedin, github, cv (all optional)
+
+- name: "[PLACEHOLDER] Example Member"
+  group: grad
+  status: current
+  role: "PhD student, Physics"
+  degree: "B.S."
+  photo: ""
+  bio: "[PLACEHOLDER] One or two sentences about this person's research."
+  links:
+    linkedin: ""
+  years: ""
+  now: ""
+
+- name: "[PLACEHOLDER] Example Alum"
+  group: grad
+  status: alumni
+  role: "PhD student"
+  degree: "Ph.D."
+  years: "[PLACEHOLDER]"
+  now: "[PLACEHOLDER] Current position"

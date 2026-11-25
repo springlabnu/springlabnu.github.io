@@ -1,0 +1,56 @@
+{{ define "main" }}
+{{- $people := hugo.Data.people | default slice }}
+{{- $current := where $people "status" "current" }}
+{{- $alumni := where $people "status" "alumni" }}
+{{- $groups := slice
+  (dict "id" "pi" "title" "Principal Investigator")
+  (dict "id" "postdoc" "title" "Postdoctoral Researchers")
+  (dict "id" "staff" "title" "Research Staff")
+  (dict "id" "grad" "title" "Graduate Students")
+  (dict "id" "undergrad" "title" "Undergraduate Researchers") }}
+<article class="wrap page">
+  {{ partial "page-head.html" . }}
+
+  {{ range $groups }}
+  {{ $g := . }}
+  {{ with where $current "group" $g.id }}
+  <section aria-labelledby="group-{{ $g.id }}">
+    <h2 id="group-{{ $g.id }}">{{ $g.title }}</h2>
+    <ul class="people-grid{{ if eq $g.id "pi" }} people-pi{{ end }}">
+      {{ range . }}
+      {{ $person := . }}
+      <li class="person">
+        <div class="person-photo">
+          {{ with .photo }}{{ partial "img.html" (dict "src" . "alt" (printf "Photo of %s" $person.name) "width" 320 "crop" "320x320") }}{{ else }}<span class="photo-placeholder" aria-hidden="true">{{ substr $person.name 0 1 }}</span>{{ end }}
+        </div>
+        <div class="person-body">
+          <h3>{{ .name }}{{ with .degree }}<span class="degree">, {{ . }}</span>{{ end }}</h3>
+          {{ with .role }}<p class="role">{{ . }}</p>{{ end }}
+          {{ with .bio }}<p class="bio">{{ . }}</p>{{ end }}
+          {{ partial "person-links.html" .links }}
+        </div>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+  {{ end }}
+
+  {{ with $alumni }}
+  <section aria-labelledby="group-alumni">
+    <h2 id="group-alumni">Alumni</h2>
+    <ul class="alumni-list">
+      {{ range . }}
+      <li>
+        <strong>{{ .name }}</strong>{{ with .degree }}, {{ . }}{{ end }}
+        {{ with .role }}<span class="role"> — {{ . }}</span>{{ end }}
+        {{ with .years }}<span class="years"> ({{ . }})</span>{{ end }}
+        {{ with .now }}<span class="now">. Now: {{ . }}</span>{{ end }}
+        {{ partial "person-links.html" .links }}
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+</article>
+{{ end }}

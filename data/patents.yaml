@@ -1,0 +1,10 @@
+# Patents and patent applications. Schema: see CLAUDE.md → "patents.yaml".
+# status: issued | provisional | pending
+# date:   YYYY-MM-DD (issue date, or filing date for applications)
+
+- title: "[PLACEHOLDER] Example patent title"
+  inventors: ["B. Q. Spring"]
+  number: "[PLACEHOLDER]"
+  status: provisional
+  date: 2026-01-01
+  url: ""

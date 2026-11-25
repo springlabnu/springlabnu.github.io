@@ -1,0 +1,7 @@
+{{- /*
+  Project shortcode: prints the PI's email (from hugo.toml → [params.contact]) as a mailto link,
+  so the address lives in one place.
+
+  Usage in Markdown:  {{< contact-email >}}
+*/ -}}
+{{- with site.Params.contact.email -}}<a href="mailto:{{ . }}">{{ . }}</a>{{- end -}}
