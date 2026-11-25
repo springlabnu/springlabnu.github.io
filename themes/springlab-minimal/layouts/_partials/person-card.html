@@ -1,0 +1,28 @@
+{{- /*
+  One person card from data/people.yaml. Two rows:
+    row 1: photo | name, role (+ years for alumni), education
+    row 2: bio (full width), next position (alumni), links
+  Context: dict "p" (entry) "size" (photo px) "alumni" (bool, optional)
+*/ -}}
+{{- $p := .p -}}
+{{- $size := .size | default 112 -}}
+<li class="person{{ if .alumni }} person-alum{{ end }}">
+  <div class="person-head">
+    <div class="person-photo">
+      {{- with $p.photo }}{{ partial "img.html" (dict "src" . "alt" (printf "Photo of %s" $p.name) "width" $size "crop" (printf "%dx%d" $size $size)) }}{{ else }}<span class="photo-placeholder" aria-hidden="true">{{ substr $p.name 0 1 }}</span>{{ end -}}
+    </div>
+    <div class="person-id">
+      <h3>{{ $p.name }}</h3>
+      {{- $meta := slice }}{{ with $p.role }}{{ $meta = $meta | append . }}{{ end }}{{ if $.alumni }}{{ with $p.years }}{{ $meta = $meta | append . }}{{ end }}{{ end }}
+      {{ with $meta }}<p class="role">{{ delimit . " · " }}</p>{{ end }}
+      {{ with $p.education }}<ul class="education">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+    </div>
+  </div>
+  {{- if or $p.bio $p.now $p.links }}
+  <div class="person-body">
+    {{ with $p.bio }}<p class="bio">{{ . }}</p>{{ end }}
+    {{ with $p.now }}<p class="now">Next: {{ . }}</p>{{ end }}
+    {{ partial "person-links.html" $p.links }}
+  </div>
+  {{- end }}
+</li>

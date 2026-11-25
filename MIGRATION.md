@@ -119,10 +119,11 @@ Select-String -Path content\*,content\*\*,data\* -Pattern 'PLACEHOLDER'
 
 ### Contact Us → Join Us and footer
 
-- **Contact details:** the address (ISEC Room 314, 805 Columbus Ave, Boston MA 02120; the old page had the typo "Colombus"), "Department of Physics" and the email now live in `hugo.toml` and appear in the footer.
+- **Contact details:** the address (ISEC Room 314, 805 Columbus Ave, Boston MA 02120; the old page had the typo "Colombus"), and "Department of Physics" now live in `hugo.toml` and appear in the footer. **The PI's email is deliberately not published** (owner's request, 2026-11-25). The footer and Join Us link to his Northeastern faculty profile instead, through the `contact-pi` shortcode.
 - **Undergraduate volunteering:** the four areas (cell culture, electronics, optics, computational biophysics) became the "Learning opportunities" list on Join Us.
 - **Volunteer form:** the existing Google Form (`forms.gle/XB4iHnKQyjsTBsheA`) is now embedded through the `google-form` shortcode. The embed URL was taken from the short link's redirect. A fallback "open in new tab" link sits below it.
-- **Grads and postdocs:** a new "email the PI" section, as specified in the brief.
+- **Grads and postdocs:** a new "contact the PI" section, linking to his faculty profile.
+- **Join Us structure:** "Learning opportunities" and "How to apply" are subsections of "Undergraduate volunteers".
 - **Dropped:** two banner images on the Contact page and the Northeastern Physics logo.
 
 ---
@@ -135,7 +136,6 @@ Select-String -Path content\*,content\*\*,data\* -Pattern 'PLACEHOLDER'
 - [ ] **Guillaume Ducourthial** and **Matthew Waguespack:** the old page gave no title or position, so `role` is empty. Add one if known.
 - [ ] **Rebecca Harman:** the year of her Ph.D. isn't given.
 - [ ] Alumni `years` are often only "joined YYYY". Add end years and `now` (next position) where known.
-- [ ] The PI's email is shown as `b.spring@northeastern.edu`, decoded from the old site's "b dot spring at northeastern dot edu". Please confirm.
 - [ ] The large photo at the bottom of the old People page was not migrated. Tell me if it's a group photo you want on the site.
 
 ### Join Us

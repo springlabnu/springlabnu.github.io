@@ -1,0 +1,9 @@
+{{- /*
+  Project shortcode: link to the PI's contact page (hugo.toml → [params.contact].profile).
+  The PI's email is deliberately not published on the site.
+
+  Usage in Markdown:  {{< contact-pi >}}
+                      {{< contact-pi "contact Prof. Spring" >}}   (custom link text)
+*/ -}}
+{{- $text := .Get 0 | default "Prof. Spring's faculty profile" -}}
+{{- with site.Params.contact.profile -}}<a href="{{ . }}">{{ $text }}</a>{{- else -}}{{ $text }}{{- end -}}

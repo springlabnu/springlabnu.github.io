@@ -17,21 +17,7 @@
   <section aria-labelledby="group-{{ $g.id }}">
     <h2 id="group-{{ $g.id }}">{{ $g.title }}</h2>
     <ul class="people-grid{{ if eq $g.id "pi" }} people-pi{{ end }}">
-      {{ range . }}
-      {{ $person := . }}
-      <li class="person">
-        <div class="person-photo">
-          {{ with .photo }}{{ partial "img.html" (dict "src" . "alt" (printf "Photo of %s" $person.name) "width" 320 "crop" "320x320") }}{{ else }}<span class="photo-placeholder" aria-hidden="true">{{ substr $person.name 0 1 }}</span>{{ end }}
-        </div>
-        <div class="person-body">
-          <h3>{{ .name }}</h3>
-          {{ with .role }}<p class="role">{{ . }}</p>{{ end }}
-          {{ with .education }}<ul class="education">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
-          {{ with .bio }}<p class="bio">{{ . }}</p>{{ end }}
-          {{ partial "person-links.html" .links }}
-        </div>
-      </li>
-      {{ end }}
+      {{ range . }}{{ partial "person-card.html" (dict "p" . "size" 112) }}{{ end }}
     </ul>
   </section>
   {{ end }}
@@ -40,23 +26,8 @@
   {{ with $alumni }}
   <section aria-labelledby="group-alumni">
     <h2 id="group-alumni">Alumni</h2>
-    <ul class="alumni-grid">
-      {{ range . }}
-      {{ $person := . }}
-      <li class="alum">
-        <div class="alum-photo">
-          {{ with .photo }}{{ partial "img.html" (dict "src" . "alt" (printf "Photo of %s" $person.name) "width" 96 "crop" "96x96") }}{{ else }}<span class="photo-placeholder" aria-hidden="true">{{ substr $person.name 0 1 }}</span>{{ end }}
-        </div>
-        <div>
-          <h3 class="alum-name">{{ .name }}</h3>
-          <p class="role">{{ with .role }}{{ . }}{{ end }}{{ if and .role .years }} · {{ end }}{{ with .years }}{{ . }}{{ end }}</p>
-          {{ with .education }}<ul class="education">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
-          {{ with .bio }}<p class="bio">{{ . }}</p>{{ end }}
-          {{ with .now }}<p class="now">Next: {{ . }}</p>{{ end }}
-          {{ partial "person-links.html" .links }}
-        </div>
-      </li>
-      {{ end }}
+    <ul class="people-grid alumni-grid">
+      {{ range . }}{{ partial "person-card.html" (dict "p" . "size" 72 "alumni" true) }}{{ end }}
     </ul>
   </section>
   {{ end }}

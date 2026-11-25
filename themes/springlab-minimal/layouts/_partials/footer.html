@@ -8,7 +8,8 @@
         {{ site.Title }}{{ with $c.department }}, {{ . }}{{ end }}<br>
         {{ site.Params.institution }}<br>
         {{ range $c.address }}{{ . }}<br>{{ end }}
-        {{ with $c.email }}<a href="mailto:{{ . }}">{{ . }}</a>{{ end }}
+        {{ with $c.email }}<a href="mailto:{{ . }}">{{ . }}</a><br>{{ end }}
+        {{ with $c.profile }}<a href="{{ . }}">Faculty profile and contact</a>{{ end }}
       </address>
     </section>
     <section aria-labelledby="footer-links">

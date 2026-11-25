@@ -67,7 +67,9 @@ enableRobotsTXT = true
   [params.contact]
     pi = "Bryan Q. Spring, Ph.D."
     department = "Department of Physics"
-    email = "b.spring@northeastern.edu"
+    # The PI's email is intentionally NOT published on the site. Visitors are sent to the faculty
+    # profile instead. (If you ever want it shown, add: email = "…" — the footer will display it.)
+    profile = "https://cos.northeastern.edu/faculty/bryan-spring/"
     address = [
       "Interdisciplinary Science and Engineering Complex (ISEC), Room 314",
       "805 Columbus Ave",
