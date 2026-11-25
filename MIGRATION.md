@@ -60,7 +60,23 @@ Select-String -Path content\*,content\*\*,data\* -Pattern 'PLACEHOLDER'
 - [ ] The large photo at the bottom of the old People page was not migrated. Tell me if it's a group photo you want on the site.
 
 ### Publications
-- [ ] **DOIs are missing** for 17 entries that link only to a publisher page. They include Price 2026 (BOE 17:202), Zhang 2024 (BOE 15:6324), Zhang 2019 (JoVE e60160), Davoudzadeh 2019 (Sci Rep 9:4233), Zhong 2009 (BJC), Tangutoori 2016, Spring 2015 (PPS), Mallidi 2015, Spring 2014 (PNAS), Knox 2003, and the book chapters. Four more have no link at all: Spring 2014 (JBO 19:066006), Spring 2013 (JBO), and the two embargoed papers. Add a `doi:` to each when you can; it's the most durable link.
+- [ ] **DOIs are missing** for 14 entries that link only to a publisher page:
+  - Kercher (JID, accepted)
+  - Price 2026 (BOE 17:202)
+  - Zhang 2024 (BOE 15:6324)
+  - Zhang 2019 (JoVE e60160)
+  - Davoudzadeh 2019 (Sci Rep 9:4233)
+  - Tangutoori 2016
+  - Spring 2015 (PPS)
+  - Mallidi 2015
+  - Spring 2014 (PNAS)
+  - Zhong 2009 (BJC)
+  - Knox 2003
+  - the 3 book chapters (Chen 2012, Spring 2009, Chen 2009)
+
+  Five more have no link at all: Saad (Nat Commun, accepted), the 2 embargoed papers, Spring 2014 (JBO 19:066006) and Spring 2013 (JBO 18:096015).
+
+  Add a `doi:` to each when you can; it's the most durable link.
 - [ ] Kercher et al. "Cancer cell-targeted and activatable photoimmunotherapy spares T cells…" is listed as 2019, but its volume is 96(2), which is the 2020 issue. Please confirm the year.
 - [ ] Check whether the 2 embargoed papers (Kercher, Sci Rep; Lang, J Biomed Opt) and the 2 accepted ones (Saad, Nat Commun; Kercher, JID) are out now. If so, add `year`, `doi`, and set `status: published`.
 - [ ] **Copyright:** several PDFs are publisher versions. Confirm that sharing them on Google Drive is allowed under each journal's policy.
