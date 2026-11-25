@@ -20,6 +20,7 @@ Select-String -Path content\*,content\*\*,data\* -Pattern 'PLACEHOLDER'
 | Publications `/publications` | `data/publications.yaml` (49), `data/patents.yaml` (5), `content/publications/_index.md` | see below |
 | Research `/research` | `data/research.yaml` (3 pillars, 7 projects, funding), `content/research/_index.md`, images in `assets/images/research/` | see below |
 | Software `/software` | **Platforms**: `data/platforms.yaml`, `content/platforms/_index.md`, images in `assets/images/platforms/` | renamed page |
+| Collaborators `/collaborators` | `data/collaborators.yaml` (7), `content/collaborators/_index.md` | see below |
 
 ### People
 
@@ -83,6 +84,17 @@ Select-String -Path content\*,content\*\*,data\* -Pattern 'PLACEHOLDER'
   - links to Wikipedia and the AGE-II paper;
   - technical NNLS references, kept only as a short summary.
 
+### Collaborators
+
+- **Migrated:** the Translational Biophotonics Cluster plus 6 external collaborators, as a simple list. Each entry has the lab name, PI, institution, a short reworded description and its URL.
+- **Dropped:**
+  - collaborator headshots (not the lab's photos);
+  - long biographical details (positions held, dates);
+  - the Boston Globe 1999 clipping link;
+  - the Wired article link;
+  - the Knox / Förster frisbee anecdote and the photo adapted from Knox, JBO 2012;
+  - the "5 degrees from Einstein" trivia.
+
 ---
 
 ## Open TODOs (for the site owner)
@@ -106,8 +118,14 @@ Select-String -Path content\*,content\*\*,data\* -Pattern 'PLACEHOLDER'
 - [ ] **Endoscopy setup entry:** it's a placeholder. Say what is published (CAD files, parts list, code?) and give a link. Rename it, or delete it if nothing is public yet.
 - [ ] **Licenses:** none are stated on the old site. Check each GitHub repo and fill in `license`.
 - [ ] **HyperViewer:** add an image (e.g. a screenshot) if you have one.
-- [ ] **Compound prism designer:** it lives in a personal repo (`jdtatz`, likely Julia Tatz). Consider forking or transferring it to the springlabnu org.
+- [ ] **Compound prism designer:** it lives in a personal GitHub account (`jdtatz`), not the lab's. Consider forking or transferring it to the springlabnu org.
 - [ ] **Possible new entry:** the femtosecond fiber laser build has a published step-by-step protocol (JoVE 2019). Add it as a platform if you'd like.
+
+### Collaborators
+- [ ] **Affiliations and URLs may be stale.** They come from an old page. Please check each one, especially Heiko Enderling's (the `labpages2.moffitt.org` URL looks old) and the Hasan Lab URL.
+- [ ] **Brain Tumor Stem Cell Lab (Wakimoto):** no URL was given. Add one.
+- [ ] **Robert S. Knox:** he's an individual (emeritus), not a lab. Keep him here, or drop him.
+- [ ] **Partner descriptions:** ideally each partner reviews or supplies its own text.
 
 ### Publications
 - [ ] **DOIs are missing** for 14 entries that link only to a publisher page:

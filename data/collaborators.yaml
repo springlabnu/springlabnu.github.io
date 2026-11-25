@@ -1,8 +1,69 @@
 # Collaborating labs, listed in the order shown. Schema: see CLAUDE.md → "collaborators.yaml".
-# description: the partner lab's own short description of itself (reworded, 1–2 sentences).
+#   name         lab or group name
+#   pi           lead investigator (optional)
+#   institution  where they are
+#   description  what the partner lab does (in its own terms, reworded) + what we do together; 1–3 sentences
+#   url          the partner lab's own website ("" if unknown)
+# Migrated from the old Google Site Collaborators page. See MIGRATION.md.
 
-- name: "[PLACEHOLDER] Example Partner Lab"
-  pi: "[PLACEHOLDER] PI Name"
-  institution: "[PLACEHOLDER] Institution"
-  description: "[PLACEHOLDER] The partner lab's description of its own work."
+- name: "Translational Biophotonics Cluster"
+  pi: ""
+  institution: "Northeastern University"
+  description: >-
+    A Northeastern group of labs working to bring new medical imaging technologies into clinical use.
+    The Spring Lab is a member.
+  url: "https://sites.google.com/view/tbpclusternu/"
+
+- name: "Hasan Lab"
+  pi: "Tayyaba Hasan, Ph.D."
+  institution: "Wellman Center for Photomedicine, Massachusetts General Hospital / Harvard Medical School"
+  description: >-
+    Develops targeted, light-activated nanomedicines for cancer in preclinical models and runs clinical trials
+    of Visudyne-based photodynamic therapy for hard-to-treat tumors; Dr. Hasan is a co-inventor of Visudyne.
+    Together we develop image-guided photomedicine and nanomedicine.
+  url: "http://hasanlab.mgh.harvard.edu/about-us/tayyaba-hasan/"
+
+- name: "Wise Research Group"
+  pi: "Frank W. Wise, Ph.D."
+  institution: "School of Applied and Engineering Physics, Cornell University"
+  description: >-
+    Invents ultrafast fiber-laser technology by studying and modeling how intense light pulses travel through
+    single- and multimode fiber, leading to compact, low-cost femtosecond lasers for multiphoton imaging.
+    Together we build fiber lasers tailored to fluorescence microendoscopy.
+  url: "https://wise.research.engineering.cornell.edu/"
+
+- name: "Quantitative Personalized Oncology Lab"
+  pi: "Heiko Enderling, Ph.D."
+  institution: "H. Lee Moffitt Cancer Center and Research Institute"
+  description: >-
+    Builds mathematical and computational models of tumor growth, evolution and tumor–immune interactions,
+    calibrated with preclinical and clinical data, to design personalized and adaptive therapies.
+    Together we study light-based treatments that stimulate the immune system alongside immunotherapy.
+  url: "http://labpages2.moffitt.org/enderling/"
+
+- name: "Integrated Mathematical Oncology"
+  pi: "Robert A. Gatenby, M.D."
+  institution: "H. Lee Moffitt Cancer Center and Research Institute"
+  description: >-
+    Brings applied mathematicians together with tumor biologists and oncologists to model cancer as an
+    evolving dynamical system; the program developed "adaptive therapy" for metastatic cancer.
+    Together we study immune-stimulating photomedicine combined with immunotherapy.
+  url: "https://moffitt.org/research-science/divisions-and-departments/quantitative-science/integrated-mathematical-oncology/"
+
+- name: "Brain Tumor Stem Cell Lab"
+  pi: "Hiroaki Wakimoto, M.D., Ph.D."
+  institution: "Massachusetts General Hospital"
+  description: >-
+    Develops patient-derived glioblastoma stem cell models that preserve each patient's disease features.
+    Together we image the glioblastoma stem cell microenvironment and guide light-based treatment of
+    drug-resistant brain tumors.
   url: ""
+
+- name: "Robert S. Knox, Ph.D."
+  pi: ""
+  institution: "Department of Physics and Astronomy, University of Rochester (Emeritus)"
+  description: >-
+    Theoretical physicist known for work on excitons and excitation energy transfer, author of "Theory of
+    Excitons" and a co-recipient of the 1994 APS Biological Physics Prize for photosynthesis research.
+    He shares his insight on photophysics, FRET and spectroscopy with the lab.
+  url: "http://www.pas.rochester.edu/~rsk/"
