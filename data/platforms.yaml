@@ -1,15 +1,74 @@
-# Published open-source platforms (software, hardware, instruments).
+# Published open-source platforms (software, hardware, instruments), in display order within each kind.
 # Schema: see CLAUDE.md → "platforms.yaml".
-# kind:         software | hardware | instrument
-# image:        path under assets/images/ (optional), with image_alt
-# publications: keys from data/publications.yaml (shown as "How to cite")
+#   kind          software | hardware | instrument
+#   repo          main source-code URL (shown as "Source code")
+#   links         extra links: list of {label, url}
+#   license       e.g. "MIT"; leave "" if unknown
+#   image         path under assets/images/ (optional), with image_alt
+#   publications  keys from data/publications.yaml (shown as "How to cite / related papers")
+# Migrated from the old Google Site Software page. See MIGRATION.md.
 
-- name: "[PLACEHOLDER] Example Platform"
+- name: "Hyperspectral micro-image mosaicking"
   kind: software
-  summary: "[PLACEHOLDER] What it does and who it is for."
-  repo: ""
-  docs: ""
+  summary: >-
+    Stitches the small fields of view from a moving microendoscope into one large multichannel image, with a
+    user interface for semi-automated processing. It combines self-correlation, graph-cut stitching and
+    feature matching, and merges the evidence across all spectral channels to find the best mosaic.
+  repo: "https://github.com/springlabnu/Multi-Channel-Mosaicking"
+  links:
+    - label: "Self-correlation algorithm (MultiMosaic)"
+      url: "https://github.com/springlabnu/MultiMosaic"
+    - label: "Related preprint: sparse-spectral microendoscopy (bioRxiv)"
+      url: "https://biorxiv.org/cgi/content/short/2022.06.17.496624v1"
+  license: ""
+  image: platforms/mosaicking.png
+  image_alt: "A large multicolor tissue mosaic assembled from microendoscopy frames, with a zoomed-in region"
+  publications: [lang2019correlation, lang-mosaicking-tumor]
+
+- name: "HyperViewer"
+  kind: software
+  summary: >-
+    Visualizes, analyzes and batch-processes hyperspectral images and videos. It unmixes each pixel into
+    known fluorophore spectra using non-negative least squares, and lets you compare MATLAB's active-set
+    method, the fast-NNLS method, and the lab's own GPU-accelerated version (GPU-FNNLS). GPU-FNNLS needs a
+    CUDA-capable NVIDIA GPU; without one, HyperViewer falls back to a much slower CPU path.
+  repo: "https://github.com/springlabnu/hyperviewer2"
   license: ""
   image: ""
-  image_alt: ""
-  publications: []
+  publications: [kercher-unmixing, harman2022denoising]
+
+- name: "Compound prism designer"
+  kind: software
+  summary: >-
+    Designs fast, efficient, broadband spectrometers that use a compound prism to spread light by color.
+    Because size, beam deviation and information throughput pull in different directions, it uses
+    multi-objective evolutionary optimization (AGE-II) to produce a set of best trade-offs that you can explore
+    interactively before choosing a design.
+  repo: "https://github.com/jdtatz/compound-prism-designer"
+  license: ""
+  image: platforms/compound-prism.png
+  image_alt: "3D rendering of a compound prism splitting light into a rainbow of rays"
+  publications: [price2023prism]
+
+- name: "LED-array photodynamic therapy platform"
+  kind: hardware
+  summary: >-
+    An open-source, low-cost illumination system for cell-culture photodynamic therapy. A high-power LED array
+    on a motorized stage lights the wells of 24- or 96-well plates evenly and automatically. A LabVIEW
+    controller (version 4.1) moves the stage and times the LED exposure so each plate is illuminated
+    automatically.
+  repo: "https://github.com/springlabnu/pdtV4"
+  license: ""
+  image: platforms/led-array-2.jpg
+  image_alt: "The LED illumination platform in operation, glowing red under a motorized stage holding a well plate"
+  publications: [zhang2022ledarray, kercher2020ledarray]
+
+- name: "[PLACEHOLDER] Multiphoton microendoscopy setup"
+  kind: instrument
+  summary: >-
+    [PLACEHOLDER] Description of the published endoscopy setup (what is shared: designs, parts list, code?)
+    and where to find it.
+  repo: ""
+  license: ""
+  image: ""
+  publications: [zhang2024videorate]

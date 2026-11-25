@@ -19,6 +19,7 @@ Select-String -Path content\*,content\*\*,data\* -Pattern 'PLACEHOLDER'
 | People `/people` | `data/people.yaml`, `content/people/_index.md`, photos in `assets/images/people/` | see below |
 | Publications `/publications` | `data/publications.yaml` (49), `data/patents.yaml` (5), `content/publications/_index.md` | see below |
 | Research `/research` | `data/research.yaml` (3 pillars, 7 projects, funding), `content/research/_index.md`, images in `assets/images/research/` | see below |
+| Software `/software` | **Platforms**: `data/platforms.yaml`, `content/platforms/_index.md`, images in `assets/images/platforms/` | renamed page |
 
 ### People
 
@@ -72,6 +73,16 @@ Select-String -Path content\*,content\*\*,data\* -Pattern 'PLACEHOLDER'
   - the long physics explanation of multiphoton excitation, now reduced to a plain-language summary.
 - **Updated wording:** the old page called the micrometastasis technology "patent-pending". It is now US 11,547,300 (per the Publications page), so the text says "issued patent".
 
+### Software → Platforms
+
+- **Migrated:** the 4 tools became platform entries. The LED-array PDT controller (pdtV4) is merged with the LED hardware into one **hardware** entry, illustrated with the old Research page's LED photo. The mosaicking tool keeps both repos (Multi-Channel-Mosaicking and MultiMosaic) plus the bioRxiv preprint link.
+- **Citations** now point to `publications.yaml` keys, so each one exists in only one place.
+- **Added a placeholder** "instrument" entry for the multiphoton microendoscopy setup, as requested. It has no content yet.
+- **Dropped:**
+  - the LabVIEW controller screenshot;
+  - links to Wikipedia and the AGE-II paper;
+  - technical NNLS references, kept only as a short summary.
+
 ---
 
 ## Open TODOs (for the site owner)
@@ -90,6 +101,13 @@ Select-String -Path content\*,content\*\*,data\* -Pattern 'PLACEHOLDER'
 - [ ] **Computation pillar:** it has no image. Add one (e.g. a screenshot of the hyperspectral software) at `assets/images/research/…`.
 - [ ] **Funding list:** confirm it's complete and current. For example, the Aug 2026 news mentions a new NCI R01 (CA296584).
 - [ ] **Photo license:** confirm the lab may keep using Spencer A. Cohen's photos. If credit is required, we can add a credit line.
+
+### Platforms
+- [ ] **Endoscopy setup entry:** it's a placeholder. Say what is published (CAD files, parts list, code?) and give a link. Rename it, or delete it if nothing is public yet.
+- [ ] **Licenses:** none are stated on the old site. Check each GitHub repo and fill in `license`.
+- [ ] **HyperViewer:** add an image (e.g. a screenshot) if you have one.
+- [ ] **Compound prism designer:** it lives in a personal repo (`jdtatz`, likely Julia Tatz). Consider forking or transferring it to the springlabnu org.
+- [ ] **Possible new entry:** the femtosecond fiber laser build has a published step-by-step protocol (JoVE 2019). Add it as a platform if you'd like.
 
 ### Publications
 - [ ] **DOIs are missing** for 14 entries that link only to a publisher page:

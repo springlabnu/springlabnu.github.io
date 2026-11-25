@@ -23,6 +23,7 @@
         <ul class="inline-links">
           {{ with .repo }}<li><a href="{{ . }}">Source code</a></li>{{ end }}
           {{ with .docs }}<li><a href="{{ . }}">Documentation</a></li>{{ end }}
+          {{ range .links }}<li><a href="{{ .url }}">{{ .label }}</a></li>{{ end }}
           {{ with .license }}<li><span class="meta">License: {{ . }}</span></li>{{ end }}
         </ul>
         {{ with .publications }}
