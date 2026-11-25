@@ -1,25 +1,469 @@
 # People in the Spring Lab. One entry per person. Schema: see CLAUDE.md → "people.yaml".
-# group:  pi | postdoc | staff | grad | undergrad
-# status: current | alumni
-# photo:  path under assets/images/ (e.g. people/jane-doe.jpg); optional
-# links:  any of email, website, profile, scholar, orcid, linkedin, github, cv (all optional)
+# group:     pi | postdoc | staff | grad | undergrad
+# status:    current | alumni
+# role:      title shown under the name (e.g. "Ph.D. student, Physics")
+# education: list of degrees, newest first (optional)
+# photo:     path under assets/images/ (e.g. people/jane-doe.jpg); optional
+# bio:       2–4 sentences in plain language (current); 1 sentence for alumni
+# years:     alumni only, e.g. "2017–2021" or "joined 2019"
+# now:       alumni only, next position if known (optional)
+# links:     any of email, website, profile, scholar, orcid, linkedin, github, cv (optional)
+# Migrated from the old Google Site People page (last updated 3/27/2026). See MIGRATION.md.
 
-- name: "[PLACEHOLDER] Example Member"
+# ---------------------------------------------------------------- Current
+- name: "Bryan Q. Spring, Ph.D."
+  group: pi
+  status: current
+  role: "Associate Professor of Physics · Director of Graduate Studies in Physics · Affiliated Faculty, Bioengineering"
+  photo: people/bryan-spring.jpg
+  education:
+    - "Postdoctoral fellowship, Wellman Center for Photomedicine (MGH / Harvard Medical School), with Tayyaba Hasan"
+    - "Ph.D., University of Illinois Urbana–Champaign, with Robert M. Clegg"
+    - "Undergraduate research (NSF fellow), University of Rochester, with Robert S. Knox"
+  bio: >-
+    Bryan Spring runs the lab's program in biomedical physics at Northeastern, which he joined in 2015.
+    His path ran from FRET photophysics as an undergraduate, to fluorescence-lifetime and quantitative
+    FRET imaging in his doctoral work, to patented methods for imaging and selectively treating cancer
+    micrometastases as a postdoc. At Northeastern he has received an NCI K22 Transition Career Development
+    Award, a Smith Family Award for Excellence in Biomedical Research, and several NCI grants (including
+    within the Physical Sciences–Oncology Network), and he was a 2021 Scialog Fellow in Advancing Bioimaging.
+    He co-founded Nira Biosciences (Series A in 2021), whose platform became part of Alys Pharmaceuticals in 2024.
+    Away from the lab he meditates, trains calisthenics and runs.
+  links:
+    profile: "https://cos.northeastern.edu/faculty/bryan-spring/"
+    cv: "https://drive.google.com/file/d/1clTszlTchC2SETsSz34-oP3Sy8dgA1tV/view?usp=drive_link"
+    linkedin: "https://www.linkedin.com/in/bryan-spring-60925689/"
+
+- name: "Kai Zhang, Ph.D."
+  group: postdoc
+  status: current
+  role: "Postdoctoral Researcher"
+  photo: people/kai-zhang.jpg
+  education:
+    - "Ph.D. Physics, Northeastern University, 2023"
+    - "B.S. Physics, University of Minnesota, 2015"
+  bio: >-
+    Kai first joined as a Physics graduate student in 2017. He builds multiphoton fluorescence
+    microendoscopy hardware: an all-normal-dispersion femtosecond fiber laser and a handheld miniature
+    probe that pairs a fiber scanner with a micro-objective. He also leads the low-cost LED-array
+    photodynamic therapy platform, contributes to the FPGA-based multichannel GHz data-acquisition
+    project, and keeps the lab's servers and workstations running.
+  links:
+    linkedin: "https://www.linkedin.com/in/kai-zhang-9ba0a9155/"
+
+- name: "Liam Price, Ph.D."
+  group: postdoc
+  status: current
+  role: "Postdoctoral Researcher"
+  photo: people/liam-price.jpg
+  education:
+    - "Ph.D. Physics, Northeastern University, 2025"
+    - "B.S. Physics, Northeastern University, 2018"
+  bio: >-
+    Liam has been in the lab since early 2019 and works on optical engineering. He helps design a
+    microendoscope aimed at glioblastoma surgery and designs compound prisms for hyperspectral imaging.
+    His undergraduate biomedical physics work at Northeastern focused on nanomedicine and clinical optics.
+    He likes building computers and listening to music.
+
+- name: "Ji Tae Park"
   group: grad
   status: current
-  role: "PhD student, Physics"
-  degree: "B.S."
-  photo: ""
-  bio: "[PLACEHOLDER] One or two sentences about this person's research."
-  links:
-    linkedin: ""
-  years: ""
-  now: ""
+  role: "Ph.D. student, Physics"
+  photo: people/ji-tae-park.jpg
+  education:
+    - "Pharm.D., Northeastern University, 2022"
+    - "B.S. Pharmacy Studies, Northeastern University, 2021"
+  bio: >-
+    Ji Tae started in the lab in 2019 while in Northeastern's six-year Pharm.D. program (with a physics
+    minor), then moved into the Physics Ph.D. program. Combining modeling and experiments, he studies how
+    antibodies and antibody conjugates such as photoimmunoconjugates behave inside tumors, with the goal of
+    quantifying bystander effects, selectivity and avidity, and resistance to targeted therapy. He breakdances
+    and follows Chelsea FC.
 
-- name: "[PLACEHOLDER] Example Alum"
+- name: "Nicholas Otero"
+  group: grad
+  status: current
+  role: "Ph.D. student, Physics"
+  photo: people/nicholas-otero.jpg
+  education:
+    - "B.S. Physics & Forensic Science, Syracuse University, 2021"
+  bio: >-
+    Nick joined in 2023, in the third year of his Ph.D. He develops 3D microfluidic cell-culture models to
+    tune drug dosing for tumor-targeted activatable photoimmunotherapy, and adds silicon photomultipliers to
+    the lab's microendoscope for high-speed hyperspectral imaging. As an undergraduate at Syracuse he worked on
+    nanopore protein biosensors. He enjoys music, horror films and staying active.
+
+- name: "Ivonne Lozano-Pope"
+  group: grad
+  status: current
+  role: "Ph.D. student, Bioengineering"
+  photo: people/ivonne-lozano-pope.png
+  education:
+    - "M.S. Molecular Biology, Montclair State University, 2013"
+    - "B.S. Biology, St. John's University, 2007"
+  bio: >-
+    Ivonne is a cancer biologist with more than ten years of academic and pharmaceutical research experience.
+    Working with patient-derived organoid co-cultures of ovarian and colorectal cancers, she studies
+    tumor–immune interactions, chemoresistance, and new treatment strategies, especially pairing
+    photodynamic therapy with adoptive T-cell therapy to reshape the tumor microenvironment. Her work uses
+    two-photon microscopy and computational image analysis.
+
+- name: "Kristiana Ramos"
+  group: grad
+  status: current
+  role: "Ph.D. student, Physics"
+  photo: people/kristiana-ramos.jpg
+  education:
+    - "B.S. Physics, University of Maryland, College Park, 2023"
+  bio: >-
+    Kristiana joined in late 2024, in her second Ph.D. year. She investigates how tumor-targeted, activatable
+    photodynamic therapy interacts with immunosuppression in the tumor microenvironment, including combining
+    photoimmunotherapy with immune checkpoint inhibitors, and she is interested in immune responses to
+    nonlinear laser ablation. Her undergraduate research covered nanophotonics, two-photon polymerization and
+    FLASH radiotherapy. She makes playlists, reads, and tries new foods.
+
+- name: "Aden Johnson-Shoucair"
+  group: grad
+  status: current
+  role: "Ph.D. student, Bioengineering"
+  photo: people/aden-johnson-shoucair.jpg
+  education:
+    - "M.S. Biotechnology, Northeastern University, 2023"
+    - "B.A. Biochemistry, Earlham College, 2020"
+  bio: >-
+    Aden first worked in the lab as a master's student and came back in 2024. He tests tumor-targeted
+    activatable photodynamic therapy in cell culture and in vivo, develops immunodeficient and syngeneic mouse
+    models for these studies, and looks at how changing the treatment dose affects whether immune cells are
+    spared or stimulated. He bikes, plays clarinet, and enjoys board games.
+
+- name: "Rami Taha"
+  group: undergrad
+  status: current
+  role: "Undergraduate, Bioengineering & Biochemistry (class of 2027)"
+  photo: people/rami-taha.jpg
+  bio: >-
+    Rami is a pre-med student who supports the lab's cell-culture work. Outside the lab he advocates for
+    lung-cancer screening, working with ALCSI, members of Congress and MGH to offer free screening to
+    high-risk patients.
+
+- name: "Ansa Brew-Smith"
+  group: undergrad
+  status: current
+  role: "Undergraduate, Data Science & Physics (class of 2027)"
+  photo: people/ansa-brew-smith.jpg
+  bio: >-
+    Ansa works with Ji Tae on a mathematical and computational model of drug delivery through cellular
+    structures during cancer treatment. He is drawn to theoretical and computational physics, and he
+    skateboards and makes music in his free time.
+
+- name: "Jeonghyun \"Jay\" Oh"
+  group: undergrad
+  status: current
+  role: "Undergraduate, Biomedical Physics (class of 2026)"
+  photo: people/jay-oh.jpg
+  bio: >-
+    Jay started volunteering in March 2023, learning cell culture and basic photomedicine experiments. After a
+    co-op in the Hasan Lab at MGH/Harvard Medical School, he returned as a full-time co-op in spring 2025. He
+    tests how patient-derived high-grade serous ovarian cancer cells respond to chemotherapy and photodynamic
+    therapy, and compares photosensitizers under different light doses. He plays soccer and basketball,
+    climbs, runs and lifts.
+
+# ---------------------------------------------------------------- Alumni
+- name: "Sudip Timilsina, Ph.D."
   group: grad
   status: alumni
-  role: "PhD student"
-  degree: "Ph.D."
-  years: "[PLACEHOLDER]"
-  now: "[PLACEHOLDER] Current position"
+  role: "Ph.D. student, Physics"
+  years: "2020–2025"
+  photo: people/sudip-timilsina.jpg
+  education:
+    - "Ph.D. Physics, Northeastern University, 2025"
+    - "B.S. Physics, Tribhuvan University, 2016"
+  bio: >-
+    Developed a multi-targeted photoimmunotherapy approach for heterogeneous high-grade serous ovarian
+    cancer, using proteomics, flow cytometry and confocal microscopy to find surface-protein targets, and
+    served as the lab's safety and compliance liaison.
+
+- name: "Rebecca Harman, Ph.D."
+  group: grad
+  status: alumni
+  role: "Ph.D. student, Physics"
+  years: "joined 2019"
+  photo: people/rebecca-harman.jpg
+  education:
+    - "Ph.D. Physics, Northeastern University"
+    - "B.S. Physics, Harvey Mudd College, 2017"
+  bio: >-
+    Studied tumor-targeted, activatable photomedicine and precision microsurgery aimed at residual cancer
+    deposits that standard therapies miss.
+  links:
+    linkedin: "https://www.linkedin.com/in/rebecca-harman-73360013a/"
+
+- name: "Ryan Lang, Ph.D."
+  group: grad
+  status: alumni
+  role: "Ph.D. student, Physics"
+  years: "2017–2021"
+  photo: people/ryan-lang.jpg
+  education:
+    - "Ph.D. Physics, Northeastern University, 2021"
+    - "B.S. Physics, Worcester Polytechnic Institute, 2016"
+  bio: >-
+    Built video-mosaicking algorithms for real-time hyperspectral imaging and measured multiphoton
+    cross-sections of common fluorophores, especially beyond 1000 nm.
+  links:
+    linkedin: "https://www.linkedin.com/in/rtlang/"
+
+- name: "Eric Kercher, Ph.D."
+  group: grad
+  status: alumni
+  role: "Ph.D. student, Physics"
+  years: "2016–2020"
+  photo: people/eric-kercher.jpg
+  education:
+    - "Ph.D. Physics, Northeastern University, 2020"
+    - "B.S. Physics, Rose-Hulman Institute of Technology, 2015"
+  bio: >-
+    Led the lab's work on characterizing distinct cell phenotypes within heterogeneous cancer cultures and
+    earned a Graduate Certificate in Nanomedicine during his doctorate.
+  links:
+    linkedin: "https://www.linkedin.com/in/eric-kercher-39a16240/"
+
+- name: "Nima Davoudzadeh, Ph.D."
+  group: postdoc
+  status: alumni
+  role: "Postdoctoral fellow"
+  years: "joined 2016"
+  photo: people/nima-davoudzadeh.jpg
+  education:
+    - "Ph.D., Southern Illinois University Carbondale, 2014"
+  bio: >-
+    Designed multi-wavelength, all-fiber femtosecond ring lasers for low-cost two- and three-photon
+    endoscopy, after a postdoc in the Photonic Systems Lab at the University of Illinois.
+  links:
+    linkedin: "https://www.linkedin.com/in/ndavoudzadeh/"
+
+- name: "Guillaume Ducourthial, Ph.D."
+  group: postdoc
+  status: alumni
+  role: ""
+  years: "joined 2016"
+  photo: people/guillaume-ducourthial.jpg
+  education:
+    - "Ph.D. Photonics Systems, University of Limoges (France), 2014"
+  bio: >-
+    Led development of a low-cost, all-fiber multiphoton imaging probe for video-rate hyperspectral
+    imaging, building on fiber-optic microendoscopy work at XLIM and a postdoc at the Laboratoire
+    d'Optique et Biosciences.
+  links:
+    linkedin: "https://www.linkedin.com/in/guillaume-ducourthial-11513775/"
+
+- name: "Taresh Sharan"
+  group: staff
+  status: alumni
+  role: "Visiting scholar"
+  photo: people/taresh-sharan.jpg
+  education:
+    - "Doctoral candidate, Indian Institute of Technology (Varanasi)"
+  bio: >-
+    Applied Raman spectroscopy to cardiac biomarker detection and deep learning to classifying heart
+    conditions from medical images.
+
+- name: "Jiancheng (J.C.) Zeng"
+  group: grad
+  status: alumni
+  role: "Doctoral candidate, Physics"
+  years: "joined 2019"
+  photo: people/jc-zeng.jpg
+  education:
+    - "B.S. Physics, Sun Yat-sen University, 2018"
+  bio: >-
+    Designed an FPGA-based circuit for high-rate data acquisition, then moved on to particle physics while
+    continuing to collaborate on the FPGA project.
+
+- name: "Matthew Waguespack"
+  group: grad
+  status: alumni
+  role: ""
+  years: "joined 2018"
+  photo: people/matthew-waguespack.jpg
+  education:
+    - "B.S. Physics, East Carolina University, 2016"
+  bio: >-
+    Studied tumor-cell ablation and the feasibility of femtosecond microsurgery, and wrote a Monte Carlo
+    code for mapping light delivery in tumors.
+
+- name: "Aryan Mehrotra"
+  group: grad
+  status: alumni
+  role: "M.S. student, Electrical & Computer Engineering"
+  years: "joined 2024"
+  photo: people/aryan-mehrotra.jpg
+  education:
+    - "M.S. Electrical & Computer Engineering, Northeastern University, 2024"
+    - "B.S. Computer Engineering, Northeastern University, 2023"
+  bio: >-
+    Wrote firmware for the FPGA frame grabber that handles multichannel data acquisition in the
+    microendoscopy project.
+
+- name: "Sanjana Reddy Bobbala"
+  group: grad
+  status: alumni
+  role: "M.S. student, Electrical & Computer Engineering"
+  years: "joined 2023"
+  photo: people/sanjana-reddy-bobbala.jpg
+  education:
+    - "M.S. Electrical & Computer Engineering, Northeastern University, 2025"
+  bio: >-
+    Worked on FPGA mezzanine-card hardware and programming for a 32-channel frame grabber for hyperspectral
+    multiphoton microendoscopy.
+
+- name: "Arvind Mohan"
+  group: grad
+  status: alumni
+  role: "M.S. student, Bioengineering"
+  years: "joined 2018"
+  photo: people/arvind-mohan.jpg
+  education:
+    - "B.E. Electrical & Electronics Engineering, BITS Pilani, 2016"
+  bio: >-
+    Joined as an instrumentation specialist and developed a laser-scanning multiphoton microendoscopic probe
+    for his master's thesis.
+  links:
+    linkedin: "https://www.linkedin.com/in/arvindmohan95/"
+
+- name: "Jacob Gagnon"
+  group: undergrad
+  status: alumni
+  role: "Undergraduate, Biomedical Physics"
+  years: "joined 2024"
+  photo: people/jacob-gagnon.jpg
+  education:
+    - "B.S. Biomedical Physics, Northeastern University, 2025"
+  bio: >-
+    Upgraded the control software for the two-photon microendoscope.
+
+- name: "Maria Mataac"
+  group: undergrad
+  status: alumni
+  role: "Undergraduate, Physics"
+  years: "joined 2021"
+  photo: people/maria-mataac.jpg
+  education:
+    - "B.S. Physics, Northeastern University, 2025"
+  bio: >-
+    Helped fabricate and optimize the lab's femtosecond fiber laser, then studied tumor-associated
+    macrophages and their role in the tumor microenvironment.
+
+- name: "Gabriel Hill"
+  group: undergrad
+  status: alumni
+  role: "Undergraduate, Physics & Philosophy (class of 2026)"
+  years: "joined 2023"
+  photo: people/gabriel-hill.jpg
+  bio: >-
+    Helped design and build a new housing for the microendoscope.
+
+- name: "Nikolas Sanderson"
+  group: undergrad
+  status: alumni
+  role: "Undergraduate, Electrical Engineering (class of 2026)"
+  years: "joined 2022"
+  photo: people/nikolas-sanderson.jpg
+  bio: >-
+    Helped develop a femtosecond laser pulse splitter.
+
+- name: "Jvalanti Prasad"
+  group: undergrad
+  status: alumni
+  role: "Undergraduate, Electrical & Computer Engineering (class of 2024)"
+  years: "joined 2023"
+  photo: people/jvalanti-prasad.jpg
+  bio: >-
+    Helped fabricate custom detectors and femtosecond lasers for multiphoton microendoscopy.
+
+- name: "Ellie Smith"
+  group: undergrad
+  status: alumni
+  role: "Undergraduate, Biochemistry (class of 2023)"
+  years: "joined 2019"
+  photo: people/ellie-smith.jpg
+  bio: >-
+    Developed models of chemoresistant ovarian cancer with the cell-culture team and trained in the CaNCURE
+    cancer nanomedicine program.
+
+- name: "Alejandro Olmos"
+  group: undergrad
+  status: alumni
+  role: "Undergraduate, Health Sciences (class of 2022)"
+  years: "joined 2018"
+  photo: people/alejandro-olmos.jpg
+  bio: >-
+    Explored resistance mechanisms in 2D and 3D tumor-culture models to build models of chemoresistant
+    ovarian cancer.
+  links:
+    linkedin: "https://www.linkedin.com/in/alejandro-olmos/"
+
+- name: "Sophia Renauld"
+  group: undergrad
+  status: alumni
+  role: "Undergraduate, Physics (class of 2021)"
+  years: "joined 2018"
+  photo: people/sophia-renauld.jpg
+  bio: >-
+    Member of the cell-culture team.
+  links:
+    linkedin: "https://www.linkedin.com/in/sophia-renauld/"
+
+- name: "Jen Selingo"
+  group: undergrad
+  status: alumni
+  role: "Undergraduate, Applied Physics"
+  years: "2018–2020"
+  photo: people/jen-selingo.jpg
+  education:
+    - "B.S. Applied Physics, Northeastern University, 2020"
+  bio: >-
+    Helped design the high-power LED array at the heart of the lab's low-cost PDT system, and automated
+    calibration of the microendoscope's scan pattern in LabVIEW.
+  now: "M.S. Biomedical Engineering, Duke University"
+
+- name: "Lauren Herschelman"
+  group: undergrad
+  status: alumni
+  role: "Undergraduate, Bioengineering (class of 2020)"
+  photo: people/lauren-herschelman.jpg
+  bio: >-
+    Received an Undergraduate Women in Physics award and helped develop new models of chemoresistant disease
+    with the cell-culture team.
+
+- name: "Anna McIntyre"
+  group: undergrad
+  status: alumni
+  role: "Undergraduate, Biochemistry (class of 2020)"
+  photo: people/anna-mcintyre.jpg
+  bio: >-
+    Played a key role in building up the lab's cell-culture work.
+  links:
+    linkedin: "https://www.linkedin.com/in/anna-mcintyre-b11352150/"
+
+- name: "Jiasen Hou"
+  group: undergrad
+  status: alumni
+  role: "Undergraduate, Applied Physics (class of 2020)"
+
+- name: "Julia Tatz"
+  group: undergrad
+  status: alumni
+  role: "Undergraduate, Physics (class of 2019)"
+
+- name: "Gabby Brauner"
+  group: undergrad
+  status: alumni
+  role: "Co-op student (CaNCURE), Health Science (class of 2018)"
+  photo: people/gabby-brauner.png
+  bio: >-
+    Helped set up the lab and its first cell-culture experiments, then characterized chemoresistant ovarian
+    cancer cell lines for her senior capstone.
+  now: "Medical school (from fall 2018)"
+  links:
+    linkedin: "https://www.linkedin.com/in/gabrielle-brauner/"

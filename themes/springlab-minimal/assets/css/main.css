@@ -186,6 +186,7 @@ address { font-style: normal; }
 /* ---------- People ---------- */
 .people-grid { list-style: none; padding: 0; margin: 1rem 0 0; display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); }
 .person { display: flex; gap: 1rem; align-items: flex-start; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; }
+.person-photo, .alum-photo { flex: none; }
 .person-photo img, .photo-placeholder { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; flex: none; }
 .photo-placeholder { display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); font-size: 2rem; font-weight: 700; }
 .person h3 { margin: 0 0 .15rem; }
@@ -195,9 +196,14 @@ address { font-style: normal; }
 .people-pi { grid-template-columns: 1fr; }
 .people-pi .person-photo img, .people-pi .photo-placeholder { width: 160px; height: 160px; }
 @media (max-width: 520px) { .people-pi .person { flex-direction: column; } }
-.alumni-list { padding-left: 1.2rem; }
-.alumni-list li { margin-bottom: .5rem; }
-.alumni-list .person-links { display: inline-flex; margin: 0 0 0 .5rem; }
+.education { list-style: none; padding: 0; margin: 0 0 .5rem; font-size: .88rem; color: var(--text-muted); }
+.alumni-grid { list-style: none; padding: 0; margin: 1rem 0 0; display: grid; gap: 1rem 1.5rem; grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr)); }
+.alum { display: flex; gap: .85rem; align-items: flex-start; padding: .75rem 0; border-top: 1px solid var(--border); }
+.alum-photo img, .alum-photo .photo-placeholder { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; font-size: 1.4rem; }
+.alum-name { font-size: 1.02rem; margin: 0 0 .1rem; }
+.alum .bio { font-size: .9rem; margin-bottom: .3rem; }
+.alum .now { font-size: .88rem; margin-bottom: .2rem; }
+.alum .person-links { margin-top: .2rem; font-size: .88rem; }
 
 /* ---------- Collaborators ---------- */
 .collab-list { list-style: none; padding: 0; margin: 1.5rem 0 0; }
